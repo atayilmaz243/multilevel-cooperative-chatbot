@@ -40,27 +40,22 @@ body {
 @keyframes heartbeat-bg {
     0% {
         filter: brightness(1) saturate(1);
-        transform: scale(1);
     }
 
     15% {
-        filter: brightness(1.3) saturate(1.2);
-        transform: scale(1.02);
+        filter: brightness(1.3) saturate(1.3);
     }
 
     30% {
         filter: brightness(1) saturate(1);
-        transform: scale(1);
     }
 
     45% {
-        filter: brightness(1.4) saturate(1.3);
-        transform: scale(1.03);
+        filter: brightness(1.4) saturate(1.4);
     }
 
     100% {
         filter: brightness(1) saturate(1);
-        transform: scale(1);
     }
 }
 

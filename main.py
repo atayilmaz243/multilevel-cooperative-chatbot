@@ -106,6 +106,7 @@ def get_system_prompt_for_level(level: int) -> str:
 
 @app.post("/api/chat")
 async def chat_endpoint(request: ChatRequest):
+    global conversation_memory
     try:
         if request.level < 1 or request.level > 10:
             raise HTTPException(status_code=400, detail="Level must be between 1 and 10.")
@@ -134,7 +135,6 @@ async def chat_endpoint(request: ChatRequest):
         reply = response.choices[0].message.content
         
         # Save to memory (10 messages = 5 pairs of user/assistant)
-        global conversation_memory
         conversation_memory.append({"role": "user", "content": request.message})
         conversation_memory.append({"role": "assistant", "content": reply})
         if len(conversation_memory) > 10:

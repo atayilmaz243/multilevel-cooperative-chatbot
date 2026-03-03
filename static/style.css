@@ -29,21 +29,10 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    /* Remove background and transition from body itself */
-    background: #000;
-}
-
-/* Create a persistent background layer that handles the gradients & animation */
-body::before {
-    content: "";
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    right: -10%;
-    bottom: -10%;
-    z-index: -1;
+    /* We use JS to update --bg-gradient dynamically */
     background: var(--bg-gradient);
     background-size: 200% 200%;
+    /* Note: Animating gradient background is tricky, but 'filter: brightness' over the body works reliably */
     transition: background 1s ease-in-out;
 }
 
@@ -70,8 +59,8 @@ body::before {
     }
 }
 
-/* Apply animation ONLY to the deep background layer */
-body.thinking::before {
+/* Apply animation directly to the body so it pulsates the dynamic background */
+body.thinking {
     animation: heartbeat-bg 1.2s infinite ease-in-out;
 }
 

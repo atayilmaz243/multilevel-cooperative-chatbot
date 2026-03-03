@@ -22,18 +22,29 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    /* transition cannot animate linear-gradient directly in all browsers, 
-       so we will manipulate background pseudo-elements or colors via JS. 
-       But a simple background color transition is reliable. */
-    background: var(--bg-gradient);
-    background-size: 200% 200%;
-    transition: background 1s ease-in-out;
     color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    /* Remove background and transition from body itself */
+    background: #000;
+}
+
+/* Create a persistent background layer that handles the gradients & animation */
+body::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    z-index: -1;
+    background: var(--bg-gradient);
+    background-size: 200% 200%;
+    transition: background 1s ease-in-out;
 }
 
 /* Heartbeat Animation when AI is "Thinking" */
@@ -59,7 +70,8 @@ body {
     }
 }
 
-body.thinking {
+/* Apply animation ONLY to the deep background layer */
+body.thinking::before {
     animation: heartbeat-bg 1.2s infinite ease-in-out;
 }
 

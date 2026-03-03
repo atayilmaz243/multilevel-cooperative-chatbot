@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const val = e.target.value;
         currentLevelLabel.textContent = levelMapping[val].label;
         levelDescription.textContent = levelMapping[val].desc;
-        // Dynamically update the background
-        document.body.style.background = levelMapping[val].color;
+        // Dynamically update the background CSS variable
+        document.documentElement.style.setProperty('--bg-gradient', levelMapping[val].color);
     });
 
     // Initialize with level 5
-    document.body.style.background = levelMapping[slider.value].color;
+    document.documentElement.style.setProperty('--bg-gradient', levelMapping[slider.value].color);
 
     // Helper to append a message to the UI
     const appendMessage = (sender, text) => {

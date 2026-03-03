@@ -5,6 +5,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
+import logging
+
+# Configure basic logging to a file
+logging.basicConfig(
+    filename="chat_history.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 # Load environment variables
 load_dotenv()
@@ -111,9 +119,20 @@ async def chat_endpoint(request: ChatRequest):
             max_tokens=500
         )
 
-        return {"reply": response.choices[0].message.content}
+        reply = response.choices[0].message.content
+        
+        # Log the final prompt and response
+        logging.info(f"--- NEW CHAT REQUEST ---")
+        logging.info(f"Level: {request.level}")
+        logging.info(f"System Prompt:\n{system_prompt}")
+        logging.info(f"User Message:\n{request.message}")
+        logging.info(f"AI Response:\n{reply}")
+        logging.info(f"------------------------\n")
+
+        return {"reply": reply}
 
     except Exception as e:
+        logging.error(f"Error during chat API call: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # We will serve the static files from the 'static' directory at the root '/'

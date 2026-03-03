@@ -1,14 +1,15 @@
 /* Base Variables & Theme */
 :root {
+    /* We'll change --bg-gradient via Javascript */
     --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --primary-color: #6366f1;
     --primary-hover: #4f46e5;
-    
+
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
-    
+
     --ai-msg-bg: rgba(99, 102, 241, 0.15);
     --user-msg-bg: rgba(255, 255, 255, 0.1);
 }
@@ -21,13 +22,37 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    /* transition cannot animate linear-gradient directly in all browsers, 
+       so we will manipulate background pseudo-elements or colors via JS. 
+       But a simple background color transition is reliable. */
     background: var(--bg-gradient);
+    background-size: 200% 200%;
+    transition: background 1s ease-in-out;
     color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+/* Pulsing Animation when AI is "Thinking" */
+@keyframes pulse-bg {
+    0% {
+        filter: brightness(1) saturate(1);
+    }
+
+    50% {
+        filter: brightness(1.3) saturate(1.2);
+    }
+
+    100% {
+        filter: brightness(1) saturate(1);
+    }
+}
+
+body.thinking {
+    animation: pulse-bg 1.5s infinite alternate ease-in-out;
 }
 
 /* App Layout */
@@ -149,8 +174,9 @@ body {
 .chat-history::-webkit-scrollbar {
     width: 6px;
 }
+
 .chat-history::-webkit-scrollbar-thumb {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
 }
 
@@ -232,17 +258,30 @@ body {
 .dot {
     width: 6px;
     height: 6px;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     animation: bounce 1.4s infinite ease-in-out both;
 }
 
-.dot:nth-child(1) { animation-delay: -0.32s; }
-.dot:nth-child(2) { animation-delay: -0.16s; }
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
 
 @keyframes bounce {
-    0%, 80%, 100% { transform: scale(0); }
-    40% { transform: scale(1); }
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
 }
 
 
@@ -306,7 +345,7 @@ body {
         gap: 10px;
         padding: 10px;
     }
-    
+
     .glass-panel {
         border-radius: 16px;
     }

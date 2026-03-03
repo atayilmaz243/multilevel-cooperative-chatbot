@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mapping levels to description texts and labels
     const levelMapping = {
-        1: { label: "Level: 1 (Uncooperative)", desc: "Negative and unwilling to help." },
-        2: { label: "Level: 2", desc: "Very reluctant, complaining but gives tiny hints." },
-        3: { label: "Level: 3 (Suggestive)", desc: "Friendly, suggests working on it together." },
-        4: { label: "Level: 4", desc: "Helpful but leaves the final decision up to you." },
-        5: { label: "Level: 5 (Commander)", desc: "Takes over. Gives direct, authoritative step-by-step commands." },
-        6: { label: "Level: 6", desc: "Helpful and educational, explains the 'why'." },
-        7: { label: "Level: 7", desc: "Polite and extremely detailed assistant." },
-        8: { label: "Level: 8", desc: "Overly eager, does things very quickly for you." },
-        9: { label: "Level: 9", desc: "Proactive expert, anticipates future errors." },
-        10: { label: "Level: 10 (Ultra Cooperative)", desc: "Limitless. Designs everything for you instantly with immense joy." }
+        1: { label: "Level: 1 (Uncooperative)", desc: "Negative and unwilling to help.", color: "linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%)" }, // Deep Red
+        2: { label: "Level: 2", desc: "Very reluctant, complaining but gives tiny hints.", color: "linear-gradient(135deg, #431407 0%, #7c2d12 100%)" }, // Orange-Red
+        3: { label: "Level: 3 (Suggestive)", desc: "Friendly, suggests working on it together.", color: "linear-gradient(135deg, #172554 0%, #1d4ed8 100%)" }, // Friendly Blue
+        4: { label: "Level: 4", desc: "Helpful but leaves the final decision up to you.", color: "linear-gradient(135deg, #0f172a 0%, #3b82f6 100%)" },
+        5: { label: "Level: 5 (Commander)", desc: "Takes over. Gives direct, authoritative step-by-step commands.", color: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)" }, // Dark Indigo
+        6: { label: "Level: 6", desc: "Helpful and educational, explains the 'why'.", color: "linear-gradient(135deg, #064e3b 0%, #047857 100%)" }, // Emerald 
+        7: { label: "Level: 7", desc: "Polite and extremely detailed assistant.", color: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)" }, // Green
+        8: { label: "Level: 8", desc: "Overly eager, does things very quickly for you.", color: "linear-gradient(135deg, #065f46 0%, #10b981 100%)" }, // Mint Green
+        9: { label: "Level: 9", desc: "Proactive expert, anticipates future errors.", color: "linear-gradient(135deg, #022c22 0%, #34d399 100%)" }, // Bright Sea Green
+        10: { label: "Level: 10 (Ultra Cooperative)", desc: "Limitless. Designs everything for you instantly with immense joy.", color: "linear-gradient(135deg, #064e3b 0%, #84cc16 100%)" } // Extreme Neon Green
     };
 
     // Update Slider UI
@@ -26,7 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const val = e.target.value;
         currentLevelLabel.textContent = levelMapping[val].label;
         levelDescription.textContent = levelMapping[val].desc;
+        // Dynamically update the background
+        document.body.style.background = levelMapping[val].color;
     });
+
+    // Initialize with level 5
+    document.body.style.background = levelMapping[slider.value].color;
 
     // Helper to append a message to the UI
     const appendMessage = (sender, text) => {
@@ -92,6 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
         userInput.disabled = true;
         sendBtn.disabled = true;
 
+        // Add thinking class for pulse animation
+        document.body.classList.add("thinking");
+
         showLoading();
 
         try {
@@ -117,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             removeLoading();
             appendMessage("ai", `Error: ${error.message}`);
         } finally {
+            document.body.classList.remove("thinking");
             userInput.disabled = false;
             sendBtn.disabled = false;
             userInput.focus();

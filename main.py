@@ -114,15 +114,23 @@ async def chat_endpoint(request: ChatRequest):
         system_prompt = get_system_prompt_for_level(request.level)
 
         # Build messages payload
-        messages = [{"role": "system", "content": system_prompt}]
+        messages = []
 
+        # 1. Insert Past Context First
         if conversation_memory:
-            past_context = "--- PAST CONTEXT (Last 5 conversations) ---\n"
+            past_context = "--- PAST CONTEXT (History of the conversation) ---\n"
             for msg in conversation_memory:
                 past_context += f"{msg['role'].upper()}: {msg['content']}\n"
-            past_context += "-------------------------------------------\n"
+            past_context += "--------------------------------------------------\n"
             messages.append({"role": "system", "content": past_context})
 
+        # 2. Insert the STRICT behavior prompt AFTER the memory, so it overrides any past persona.
+        messages.append({
+            "role": "system", 
+            "content": f"ÖNEMLİ KURAL: Geçmiş sohbet nasıl olursa olsun, ŞU ANKİ GÖREVİN ve KİŞİLİĞİN budur:\n{system_prompt}"
+        })
+
+        # 3. Add the actual User Message
         messages.append({"role": "user", "content": request.message})
 
         response = await openai_client.chat.completions.create(

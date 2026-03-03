@@ -40,6 +40,9 @@ openai_client = AsyncOpenAI(
     # base_url="http://localhost:11434/v1" # Uncomment for local AI like Ollama
 )
 
+# Global store for conversation memory (stores last 5 exchanges -> 10 messages)
+conversation_memory = []
+
 def get_system_prompt_for_level(level: int) -> str:
     """
     Returns a system prompt based on the cooperativeness level (1 to 10).
@@ -109,18 +112,34 @@ async def chat_endpoint(request: ChatRequest):
 
         system_prompt = get_system_prompt_for_level(request.level)
 
+        # Build messages payload
+        messages = [{"role": "system", "content": system_prompt}]
+
+        if conversation_memory:
+            past_context = "--- PAST CONTEXT (Last 5 conversations) ---\n"
+            for msg in conversation_memory:
+                past_context += f"{msg['role'].upper()}: {msg['content']}\n"
+            past_context += "-------------------------------------------\n"
+            messages.append({"role": "system", "content": past_context})
+
+        messages.append({"role": "user", "content": request.message})
+
         response = await openai_client.chat.completions.create(
             model="gpt-3.5-turbo", # or the model you prefer (e.g., gpt-4o, or a local model name)
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": request.message}
-            ],
+            messages=messages,
             temperature=0.7,
             max_tokens=500
         )
 
         reply = response.choices[0].message.content
         
+        # Save to memory (10 messages = 5 pairs of user/assistant)
+        global conversation_memory
+        conversation_memory.append({"role": "user", "content": request.message})
+        conversation_memory.append({"role": "assistant", "content": reply})
+        if len(conversation_memory) > 10:
+            conversation_memory = conversation_memory[-10:]
+
         # Log the final prompt and response
         logging.info(f"--- NEW CHAT REQUEST ---")
         logging.info(f"Level: {request.level}")

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooperative AI Assistant</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header with Slider -->
+        <header class="header glass-panel">
+            <div class="header-info">
+                <h1>AI Co-Pilot</h1>
+                <p class="subtitle">Set the AI's Cooperativeness Level</p>
+            </div>
+            
+            <div class="slider-container">
+                <div class="slider-labels">
+                    <span class="label-low">Uncooperative (1)</span>
+                    <span id="currentLevel" class="label-current">Level: 5 (Commander)</span>
+                    <span class="label-high">Subservient (10)</span>
+                </div>
+                <!-- 1 to 10 range slider -->
+                <input type="range" id="coopSlider" min="1" max="10" value="5" class="styled-slider">
+                
+                <!-- Description based on level -->
+                <p id="levelDescription" class="level-desc">Commands you directly step by step.</p>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-container glass-panel">
+            <div class="chat-history" id="chatHistory">
+                <!-- Welcome Message -->
+                <div class="message ai-message">
+                    <div class="avatar ai-avatar">AI</div>
+                    <div class="bubble">
+                        <p>Hi, I am your Co-Pilot. Adjust the slider above to change my cooperativeness level before sending a message!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <form id="chatForm">
+                    <input type="text" id="userInput" placeholder="Ask me something..." required autocomplete="off">
+                    <button type="submit" id="sendBtn" class="primary-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

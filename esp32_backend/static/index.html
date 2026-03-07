@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Control Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="glass-panel">
+        <header>
+            <h1>ESP32 Control Panel</h1>
+            <p>WebSocket Status: <span id="ws-status" class="status-disconnected">Disconnected</span></p>
+        </header>
+
+        <main class="controls">
+            <button id="btn-toggle-led" class="glow-button blue" disabled>
+                <span class="icon">💡</span>
+                Mavi Işığı Yak / Söndür
+            </button>
+        </main>
+
+        <section class="logs">
+            <h3>Cihaz Logları</h3>
+            <div id="log-container" class="log-box"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

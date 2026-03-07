@@ -1,0 +1,256 @@
+2026-03-07 15:33:42,634 - INFO - New WebSocket connection accepted.
+2026-03-07 15:33:46,663 - INFO - New WebSocket connection accepted.
+2026-03-07 15:34:01,610 - INFO - WebSocket connection removed.
+2026-03-07 15:34:01,611 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:34:01,739 - INFO - New WebSocket connection accepted.
+2026-03-07 15:34:04,516 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 15:34:09,598 - INFO - WebSocket connection removed.
+2026-03-07 15:34:09,598 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:34:09,619 - INFO - New WebSocket connection accepted.
+2026-03-07 15:34:11,661 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 15:34:16,852 - INFO - WebSocket connection removed.
+2026-03-07 15:34:16,852 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:34:16,967 - INFO - New WebSocket connection accepted.
+2026-03-07 15:34:42,040 - INFO - WebSocket connection removed.
+2026-03-07 15:34:42,041 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:34:42,071 - INFO - New WebSocket connection accepted.
+2026-03-07 15:35:07,141 - INFO - WebSocket connection removed.
+2026-03-07 15:35:07,141 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:35:07,166 - INFO - New WebSocket connection accepted.
+2026-03-07 15:35:14,815 - INFO - WebSocket connection removed.
+2026-03-07 15:35:14,815 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:35:14,815 - INFO - WebSocket connection removed.
+2026-03-07 15:35:14,815 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:35:17,832 - INFO - New WebSocket connection accepted.
+2026-03-07 15:35:20,148 - INFO - New WebSocket connection accepted.
+2026-03-07 15:35:45,215 - INFO - WebSocket connection removed.
+2026-03-07 15:35:45,215 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:35:45,235 - INFO - New WebSocket connection accepted.
+2026-03-07 15:36:10,397 - INFO - WebSocket connection removed.
+2026-03-07 15:36:10,397 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:36:10,517 - INFO - New WebSocket connection accepted.
+2026-03-07 15:36:11,436 - INFO - WebSocket connection removed.
+2026-03-07 15:36:11,436 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:36:11,436 - INFO - WebSocket connection removed.
+2026-03-07 15:36:11,436 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:36:56,718 - INFO - New WebSocket connection accepted.
+2026-03-07 15:36:57,854 - INFO - New WebSocket connection accepted.
+2026-03-07 15:37:11,183 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 15:37:16,247 - INFO - WebSocket connection removed.
+2026-03-07 15:37:16,248 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:37:16,264 - INFO - New WebSocket connection accepted.
+2026-03-07 15:37:27,781 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 15:37:32,933 - INFO - WebSocket connection removed.
+2026-03-07 15:37:32,933 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:37:33,051 - INFO - New WebSocket connection accepted.
+2026-03-07 15:37:39,779 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 15:37:44,935 - INFO - WebSocket connection removed.
+2026-03-07 15:37:44,935 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:37:44,950 - INFO - New WebSocket connection accepted.
+2026-03-07 15:38:10,003 - INFO - WebSocket connection removed.
+2026-03-07 15:38:10,004 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:38:10,019 - INFO - New WebSocket connection accepted.
+2026-03-07 15:38:35,092 - INFO - WebSocket connection removed.
+2026-03-07 15:38:35,093 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:38:35,111 - INFO - New WebSocket connection accepted.
+2026-03-07 15:39:00,179 - INFO - WebSocket connection removed.
+2026-03-07 15:39:00,180 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:39:00,194 - INFO - New WebSocket connection accepted.
+2026-03-07 15:39:25,366 - INFO - WebSocket connection removed.
+2026-03-07 15:39:25,366 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:39:25,482 - INFO - New WebSocket connection accepted.
+2026-03-07 15:39:50,763 - INFO - WebSocket connection removed.
+2026-03-07 15:39:50,763 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:39:50,880 - INFO - New WebSocket connection accepted.
+2026-03-07 15:39:59,315 - INFO - WebSocket connection removed.
+2026-03-07 15:39:59,315 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 15:40:02,633 - INFO - New WebSocket connection accepted.
+2026-03-07 15:43:39,651 - INFO - WebSocket connection removed.
+2026-03-07 15:43:39,651 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:10:49,588 - INFO - New WebSocket connection accepted.
+2026-03-07 16:11:01,153 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:11:06,474 - INFO - WebSocket connection removed.
+2026-03-07 16:11:06,475 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:11:06,881 - INFO - New WebSocket connection accepted.
+2026-03-07 16:11:32,082 - INFO - WebSocket connection removed.
+2026-03-07 16:11:32,082 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:11:32,114 - INFO - New WebSocket connection accepted.
+2026-03-07 16:11:57,262 - INFO - WebSocket connection removed.
+2026-03-07 16:11:57,262 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:11:57,282 - INFO - New WebSocket connection accepted.
+2026-03-07 16:12:22,454 - INFO - WebSocket connection removed.
+2026-03-07 16:12:22,454 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:12:22,470 - INFO - New WebSocket connection accepted.
+2026-03-07 16:12:37,583 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:12:38,082 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:12:42,934 - INFO - WebSocket connection removed.
+2026-03-07 16:12:42,934 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:12:43,571 - INFO - New WebSocket connection accepted.
+2026-03-07 16:13:09,142 - INFO - WebSocket connection removed.
+2026-03-07 16:13:09,143 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:13:10,157 - INFO - New WebSocket connection accepted.
+2026-03-07 16:13:35,775 - INFO - WebSocket connection removed.
+2026-03-07 16:13:35,775 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:13:36,186 - INFO - New WebSocket connection accepted.
+2026-03-07 16:14:00,861 - INFO - WebSocket connection removed.
+2026-03-07 16:14:00,862 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:26:43,743 - INFO - New WebSocket connection accepted.
+2026-03-07 16:26:44,353 - INFO - WebSocket connection removed.
+2026-03-07 16:26:44,353 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:26:49,212 - INFO - New WebSocket connection accepted.
+2026-03-07 16:26:49,359 - INFO - WebSocket connection removed.
+2026-03-07 16:26:49,359 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:26:55,414 - INFO - New WebSocket connection accepted.
+2026-03-07 16:26:56,025 - INFO - WebSocket connection removed.
+2026-03-07 16:26:56,025 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:00,940 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:01,090 - INFO - WebSocket connection removed.
+2026-03-07 16:27:01,091 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:06,116 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:06,258 - INFO - WebSocket connection removed.
+2026-03-07 16:27:06,258 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:11,303 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:11,452 - INFO - WebSocket connection removed.
+2026-03-07 16:27:11,452 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:16,478 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:16,638 - INFO - WebSocket connection removed.
+2026-03-07 16:27:16,639 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:21,679 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:21,833 - INFO - WebSocket connection removed.
+2026-03-07 16:27:21,833 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:26,857 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:27,012 - INFO - WebSocket connection removed.
+2026-03-07 16:27:27,012 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:32,292 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:32,441 - INFO - WebSocket connection removed.
+2026-03-07 16:27:32,441 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:37,483 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:37,631 - INFO - WebSocket connection removed.
+2026-03-07 16:27:37,631 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:43,351 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:43,499 - INFO - WebSocket connection removed.
+2026-03-07 16:27:43,499 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:48,545 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:48,700 - INFO - WebSocket connection removed.
+2026-03-07 16:27:48,700 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:54,106 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:54,249 - INFO - WebSocket connection removed.
+2026-03-07 16:27:54,249 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:27:59,278 - INFO - New WebSocket connection accepted.
+2026-03-07 16:27:59,434 - INFO - WebSocket connection removed.
+2026-03-07 16:27:59,435 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:04,461 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:04,617 - INFO - WebSocket connection removed.
+2026-03-07 16:28:04,617 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:09,653 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:09,800 - INFO - WebSocket connection removed.
+2026-03-07 16:28:09,800 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:15,593 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:16,203 - INFO - WebSocket connection removed.
+2026-03-07 16:28:16,203 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:21,103 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:21,255 - INFO - WebSocket connection removed.
+2026-03-07 16:28:21,255 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:26,286 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:26,426 - INFO - WebSocket connection removed.
+2026-03-07 16:28:26,426 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:31,473 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:31,624 - INFO - WebSocket connection removed.
+2026-03-07 16:28:31,624 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:36,653 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:36,800 - INFO - WebSocket connection removed.
+2026-03-07 16:28:36,800 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:41,824 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:41,967 - INFO - WebSocket connection removed.
+2026-03-07 16:28:41,967 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:47,846 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:48,459 - INFO - WebSocket connection removed.
+2026-03-07 16:28:48,460 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:53,696 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:53,841 - INFO - WebSocket connection removed.
+2026-03-07 16:28:53,841 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:28:58,864 - INFO - New WebSocket connection accepted.
+2026-03-07 16:28:59,012 - INFO - WebSocket connection removed.
+2026-03-07 16:28:59,012 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:05,058 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:05,668 - INFO - WebSocket connection removed.
+2026-03-07 16:29:05,668 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:10,947 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:11,501 - INFO - WebSocket connection removed.
+2026-03-07 16:29:11,502 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:16,363 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:16,511 - INFO - WebSocket connection removed.
+2026-03-07 16:29:16,511 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:22,251 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:22,698 - INFO - WebSocket connection removed.
+2026-03-07 16:29:22,698 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:27,627 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:27,798 - INFO - WebSocket connection removed.
+2026-03-07 16:29:27,798 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:32,839 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:32,989 - INFO - WebSocket connection removed.
+2026-03-07 16:29:32,990 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:38,840 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:39,454 - INFO - WebSocket connection removed.
+2026-03-07 16:29:39,455 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:44,334 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:44,586 - INFO - WebSocket connection removed.
+2026-03-07 16:29:44,587 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:50,206 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:51,223 - INFO - WebSocket connection removed.
+2026-03-07 16:29:51,223 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:29:55,717 - INFO - New WebSocket connection accepted.
+2026-03-07 16:29:55,887 - INFO - WebSocket connection removed.
+2026-03-07 16:29:55,887 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:30:01,290 - INFO - New WebSocket connection accepted.
+2026-03-07 16:30:01,444 - INFO - WebSocket connection removed.
+2026-03-07 16:30:01,444 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:30:06,486 - INFO - New WebSocket connection accepted.
+2026-03-07 16:30:06,630 - INFO - WebSocket connection removed.
+2026-03-07 16:30:06,630 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:30:06,993 - INFO - WebSocket connection removed.
+2026-03-07 16:30:06,993 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:34:18,695 - INFO - New WebSocket connection accepted.
+2026-03-07 16:34:19,936 - INFO - New WebSocket connection accepted.
+2026-03-07 16:34:31,601 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:33,584 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:34,584 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:35,370 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:36,104 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:36,952 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:40,877 - INFO - WebSocket connection removed.
+2026-03-07 16:34:40,877 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:34:45,085 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:46,652 - INFO - New WebSocket connection accepted.
+2026-03-07 16:34:46,798 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:48,020 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:48,786 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:34:49,483 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:06,990 - INFO - WebSocket connection removed.
+2026-03-07 16:35:06,990 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:35:12,021 - INFO - New WebSocket connection accepted.
+2026-03-07 16:35:32,140 - INFO - WebSocket connection removed.
+2026-03-07 16:35:32,140 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:35:37,349 - INFO - New WebSocket connection accepted.
+2026-03-07 16:35:49,597 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:50,368 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:50,935 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:51,497 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:52,815 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:53,330 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:54,147 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:54,680 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:55,785 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:56,498 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:35:57,637 - INFO - WebSocket connection removed.
+2026-03-07 16:35:57,638 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:36:02,670 - INFO - New WebSocket connection accepted.
+2026-03-07 16:36:22,831 - INFO - WebSocket connection removed.
+2026-03-07 16:36:22,831 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:36:28,640 - INFO - New WebSocket connection accepted.
+2026-03-07 16:36:48,945 - INFO - WebSocket connection removed.
+2026-03-07 16:36:48,946 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:36:54,752 - INFO - New WebSocket connection accepted.
+2026-03-07 16:37:15,947 - INFO - WebSocket connection removed.
+2026-03-07 16:37:15,947 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:37:20,679 - INFO - New WebSocket connection accepted.

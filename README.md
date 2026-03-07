@@ -36,40 +36,59 @@ Modern bir önyüze (HTML/CSS/JS - Glassmorphism) ve Python/FastAPI arka yüzün
      ```
 
 3. **Gereksinimleri Yükleyin**
-   Aşağıdaki komutla proje için gerekli tüm bağımlılıkları indirin:
+   Aşağıdaki komutla proje için gerekli tüm bağımlılıkları indirin (`web_project` ve `esp32_backend` için ortaktır):
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Çevre Değişkenlerini (Environment Variables) Ayarlayın**
-   - Proje dizininde yer alan `.env` dosyasını bir metin editöründe açın. (Eğer dosya yoksa `.env` adında yeni bir dosya oluşturun).
-   - İçerisine OpenAI API Key'inizi ekleyin:
+   - Proje ana dizininde (veya ilgili alt klasörde) yer alan `.env` dosyasını bir metin editöründe açın. (Eğer dosya yoksa `.env` adında yeni bir dosya oluşturun).
+   - İçerisine OpenAI API Key'inizi ekleyin (Sadece Web Projesi için zorunludur):
      ```env
      OPENAI_API_KEY=sk-buraya-kendi-api-anahtarinizi-yapistirin
      ```
 
-5. **Sunucuyu Başlatın**
-   Aşağıdaki komutla FastAPI sunucusunu çalıştırın:
-   ```bash
-   uvicorn main:app --reload
-   ```
+5. **Uygulamaları Başlatın**
+   Projede iki farklı backend mevcuttur:
 
-6. **Tarayıcıdan Uygulamaya Erişin**
+   **A. Web (Chatbot) Projesini Çalıştırmak İçin:**
+   ```bash
+   cd web_project
+   uvicorn main:app --reload --port 8000
+   ```
    Tarayıcınızı açın ve [http://127.0.0.1:8000/](http://127.0.0.1:8000/) adresine gidin.
    
-Artık seviyeyi seçip yapay zeka ile konuşmaya başlayabilirsiniz!
+   **B. ESP32 Backend (WebSocket) Projesini Çalıştırmak İçin:**
+   Yeni bir terminal açıp sanal ortamı tekrar aktive ettikten sonra:
+   ```bash
+   cd esp32_backend
+   uvicorn main:app --reload --port 8080 --host 0.0.0.0
+   ```
+   *Dashboard:* Sunucu çalışıyorken tarayıcınızdan `http://127.0.0.1:8080/` adresine giderek, ESP32'nin websocket komutlarını anlık test edebileceğiniz kontrol panelini açabilirsiniz.
+
+## ESP32 Entegrasyonu
+`esp32_inside` klasörü içerisinde tamamen saf TCP soketleri (`socket`) kullanan ve ESP32 için hiçbir dış kütüphane bağımlılığı (*micropython-uwebsockets* vb.) gerektirmeyen bir yapı hazırlanmıştır.
+- `simple_ws.py`: FastAPI ile tam uyumlu websocket handshake (el sıkışma) ve paket ayrıştırma (frame parsing) işlemlerini donanım seviyesinde halleder.
+- `main.py`: ESP32'nin ana giriş dosyasıdır, Wifi'a bağlanıp `SimpleWebSocket` ağacını dinlemeye başlar.
 
 ## Proje Yapısı
 ```text
 multilevel-cooperative-chatbot/
 │
-├── static/                  # Vanilla JS Frontend Dosyaları
-│   ├── index.html           # Arayüz iskeleti
-│   ├── style.css            # Görsel tasarımlar (Glassmorphism)
-│   └── app.js               # İletişim, slider logiği ve fetch istekleri
+├── web_project/             # Eski Chatbot Web Uygulaması
+│   ├── static/              # Vanilla JS Frontend Dosyaları
+│   ├── templates/           
+│   └── main.py              # Chatbot API endpointleri (FastAPI)
 │
-├── main.py                  # API endpointleri, prompt logiği (FastAPI)
-├── requirements.txt         # Gerekli Python paketleri listesi
+├── esp32_backend/           # Yeni ESP32 Haberleşme Sunucusu ve Dashboard
+│   ├── static/              # Dashboard Frontend (Glassmorphism UI)
+│   └── main.py              # WebSocket endpointleri (FastAPI)
+│
+├── esp32_inside/            # ESP32 İçine Yüklenecek MicroPython Kodları
+│   ├── simple_ws.py         # Kütüphanesiz Saf TCP WebSocket Ayrıştırıcısı
+│   └── main.py              # WiFi bağlanan ve WebSocket mesajlarını işleyen ana dosya
+│
+├── requirements.txt         # Gerekli Python paketleri listesi (ortak)
 ├── .env                     # API anahtarları için çevre değişkenleri (GİT'E ATILMAMALIDIR)
 └── README.md
 ```

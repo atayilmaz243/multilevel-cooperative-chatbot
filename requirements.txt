@@ -4,3 +4,5 @@ openai
 python-dotenv
 pydantic
 websockets
+python-multipart
+mlx-whisper

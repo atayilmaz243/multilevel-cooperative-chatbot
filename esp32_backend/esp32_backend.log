@@ -254,3 +254,371 @@
 2026-03-07 16:37:15,947 - INFO - WebSocket connection removed.
 2026-03-07 16:37:15,947 - INFO - ESP32 disconnected from WebSocket.
 2026-03-07 16:37:20,679 - INFO - New WebSocket connection accepted.
+2026-03-07 16:37:40,858 - INFO - WebSocket connection removed.
+2026-03-07 16:37:40,858 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:37:46,367 - INFO - New WebSocket connection accepted.
+2026-03-07 16:38:07,560 - INFO - WebSocket connection removed.
+2026-03-07 16:38:07,561 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:38:12,290 - INFO - New WebSocket connection accepted.
+2026-03-07 16:38:32,468 - INFO - WebSocket connection removed.
+2026-03-07 16:38:32,468 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:38:37,495 - INFO - New WebSocket connection accepted.
+2026-03-07 16:38:57,653 - INFO - WebSocket connection removed.
+2026-03-07 16:38:57,654 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:39:02,701 - INFO - New WebSocket connection accepted.
+2026-03-07 16:39:13,709 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:14,325 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:14,943 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:15,542 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:16,026 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:16,509 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:17,059 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:17,675 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:18,292 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:18,909 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:19,810 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:20,392 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:21,009 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:21,409 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:21,826 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:22,093 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:22,525 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:22,809 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:22,866 - INFO - WebSocket connection removed.
+2026-03-07 16:39:22,866 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:39:23,576 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:24,877 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:25,775 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:27,343 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:27,917 - INFO - New WebSocket connection accepted.
+2026-03-07 16:39:30,142 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:31,643 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:32,945 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:33,794 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:34,544 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:35,227 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:36,310 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:38,482 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:39,360 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:39,909 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:40,460 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:41,528 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:42,025 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:42,927 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:43,291 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:44,228 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:44,358 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:44,492 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:44,626 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:44,743 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:44,892 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:45,043 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:45,193 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:45,309 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:45,458 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:45,591 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:45,727 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:45,858 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:46,594 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:47,176 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:47,758 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:47,893 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:48,041 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:48,048 - INFO - WebSocket connection removed.
+2026-03-07 16:39:48,048 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:39:48,048 - ERROR - Failed to send to a websocket: 
+2026-03-07 16:39:48,192 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:48,342 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:48,493 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:48,613 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:48,743 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:48,859 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:49,731 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:50,709 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:53,848 - INFO - New WebSocket connection accepted.
+2026-03-07 16:39:55,309 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:56,226 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:39:57,076 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:40:15,040 - INFO - WebSocket connection removed.
+2026-03-07 16:40:15,041 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:40:20,891 - INFO - New WebSocket connection accepted.
+2026-03-07 16:40:41,920 - INFO - WebSocket connection removed.
+2026-03-07 16:40:41,920 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:40:48,220 - INFO - New WebSocket connection accepted.
+2026-03-07 16:41:09,350 - INFO - WebSocket connection removed.
+2026-03-07 16:41:09,351 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:41:14,651 - INFO - New WebSocket connection accepted.
+2026-03-07 16:41:34,938 - INFO - WebSocket connection removed.
+2026-03-07 16:41:34,939 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:41:39,960 - INFO - New WebSocket connection accepted.
+2026-03-07 16:42:00,125 - INFO - WebSocket connection removed.
+2026-03-07 16:42:00,126 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:42:05,153 - INFO - New WebSocket connection accepted.
+2026-03-07 16:42:21,546 - INFO - WebSocket connection removed.
+2026-03-07 16:42:21,546 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:43:10,452 - INFO - New WebSocket connection accepted.
+2026-03-07 16:43:33,239 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:33,822 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:34,205 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:34,354 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:34,488 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:34,621 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:34,755 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:34,887 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,021 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,155 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,289 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,425 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,555 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,689 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,837 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:35,971 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:36,105 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:36,243 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:36,456 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:36,606 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:36,754 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:36,888 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,037 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,173 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,304 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,440 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,558 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,704 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,821 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:37,954 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:38,088 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:38,804 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:39,345 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:39,838 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:40,187 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:40,354 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:40,473 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:40,621 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:40,771 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:40,905 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:41,038 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:41,205 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:41,355 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:41,521 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:41,656 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:41,788 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:41,921 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:42,056 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:42,187 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:42,337 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:42,671 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:42,788 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:42,937 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:43,460 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:44,237 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:44,871 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:48,139 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:49,721 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:51,223 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:51,737 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:52,287 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:52,744 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:54,041 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:54,487 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:54,971 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:55,410 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:55,860 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:56,271 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:56,587 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:57,337 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:57,870 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:58,404 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:58,943 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:43:59,370 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:00,921 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:01,471 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:01,904 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:02,404 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:02,987 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:04,754 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:05,210 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:05,777 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:06,227 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:06,688 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:07,287 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:07,820 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:08,287 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:08,821 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:09,240 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:09,704 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:10,194 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:11,054 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:11,637 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:12,220 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:12,870 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:13,488 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:14,076 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:14,654 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:15,137 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:15,720 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:16,320 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:16,870 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:17,471 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:18,087 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:18,704 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:19,278 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:20,462 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:21,604 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:22,161 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:22,737 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:25,255 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:26,755 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:56,411 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:44:57,103 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:56:54,373 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:56:55,007 - INFO - Received from ESP32 (or client): LED_TOGGLE
+2026-03-07 16:57:02,371 - INFO - WebSocket connection removed.
+2026-03-07 16:57:02,371 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:57:17,186 - INFO - WebSocket connection removed.
+2026-03-07 16:57:17,186 - INFO - ESP32 disconnected from WebSocket.
+2026-03-07 16:57:21,044 - INFO - New WebSocket connection accepted.
+2026-03-07 17:55:05,850 - INFO - WebSocket connection removed.
+2026-03-07 17:55:05,851 - INFO - ESP32 disconnected from WebSocket.
+2026-03-20 01:41:09,887 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:41:09,891 - INFO - Saved incoming audio to /var/folders/zr/w7l1dnfj6yz67pjz806b8b_00000gn/T/tmp4956dtaw.wav
+2026-03-20 01:41:09,891 - INFO - Transcribing /var/folders/zr/w7l1dnfj6yz67pjz806b8b_00000gn/T/tmp4956dtaw.wav...
+2026-03-20 01:41:10,505 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-base-mlx/revision/main "HTTP/1.1 200 OK"
+2026-03-20 01:41:16,626 - INFO - Transcription result: Sessenememunununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununun
+2026-03-20 01:41:16,626 - INFO - Sending to LLM: Sessenememunununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununununun
+2026-03-20 01:41:19,448 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:41:19,464 - INFO - LLM Response: Görünüşe göre yazdıkların düzensiz bir şekilde devam ediyor. Size nasıl yardımcı olabilirim?
+2026-03-20 01:41:19,464 - INFO - Generating TTS...
+2026-03-20 01:41:22,474 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:41:23,229 - INFO - TTS generated at temp_audio/tts_c86fa82e_16k.wav
+2026-03-20 01:41:49,134 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:41:49,136 - INFO - Saved incoming audio to /var/folders/zr/w7l1dnfj6yz67pjz806b8b_00000gn/T/tmp9lc0iq_5.wav
+2026-03-20 01:41:49,136 - INFO - Transcribing /var/folders/zr/w7l1dnfj6yz67pjz806b8b_00000gn/T/tmp9lc0iq_5.wav...
+2026-03-20 01:41:55,618 - INFO - Transcription result: Deneme 1-1-3 Deneme 1-3 Deneme 1-3-3
+2026-03-20 01:41:55,618 - INFO - Sending to LLM: Deneme 1-1-3 Deneme 1-3 Deneme 1-3-3
+2026-03-20 01:41:57,747 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:41:57,751 - INFO - LLM Response: Bu ifadeler belirli bir düzen veya kodlamayı temsil ediyor gibi görünüyor. Ne hakkında konuşmak istersiniz?
+2026-03-20 01:41:57,751 - INFO - Generating TTS...
+2026-03-20 01:41:59,854 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:42:00,858 - INFO - TTS generated at temp_audio/tts_7aebf485_16k.wav
+2026-03-20 01:45:00,021 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:45:00,023 - INFO - Saved incoming audio to log/audio_in_20260320_014500.wav
+2026-03-20 01:45:00,024 - INFO - Transcribing log/audio_in_20260320_014500.wav...
+2026-03-20 01:45:00,470 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-base-mlx/revision/main "HTTP/1.1 200 OK"
+2026-03-20 01:45:05,247 - INFO - Transcription result: Merhaba Ataman sesslenemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtan
+2026-03-20 01:45:05,247 - INFO - Sending to LLM: Merhaba Ataman sesslenemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtanemebeli Kürüks K Konகtan
+2026-03-20 01:45:06,931 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:45:06,939 - INFO - LLM Response: Merhaba! Size nasıl yardımcı olabilirim?
+2026-03-20 01:45:06,940 - INFO - Generating TTS...
+2026-03-20 01:45:09,618 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:45:09,790 - INFO - TTS generated at temp_audio/tts_69facd2a_16k.wav
+2026-03-20 01:45:34,738 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:45:34,742 - INFO - Saved incoming audio to log/audio_in_20260320_014534.wav
+2026-03-20 01:45:34,742 - INFO - Transcribing log/audio_in_20260320_014534.wav...
+2026-03-20 01:45:35,854 - INFO - Transcription result: 6-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10
+2026-03-20 01:45:35,855 - INFO - Sending to LLM: 6-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10-10
+2026-03-20 01:45:37,423 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:45:37,426 - INFO - LLM Response: Görünüşe göre bir sayı dizisi paylaşmışsınız. Yardımcı olmamı istediğiniz bir konu var mı?
+2026-03-20 01:45:37,427 - INFO - Generating TTS...
+2026-03-20 01:45:38,523 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:45:39,422 - INFO - TTS generated at temp_audio/tts_08f038a8_16k.wav
+2026-03-20 01:46:07,199 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:46:07,201 - INFO - Saved incoming audio to log/audio_in_20260320_014607.wav
+2026-03-20 01:46:07,202 - INFO - Transcribing log/audio_in_20260320_014607.wav...
+2026-03-20 01:46:11,645 - INFO - Transcription result: Minаковân
+2026-03-20 01:46:11,646 - INFO - Sending to LLM: Minаковân
+2026-03-20 01:46:13,804 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:46:13,807 - INFO - LLM Response: Minakovân, genellikle doğa ile ilişkilendirilen bir isim gibi görünüyor. Daha spesifik bir bilgi mi arıyorsunuz?
+2026-03-20 01:46:13,807 - INFO - Generating TTS...
+2026-03-20 01:46:15,395 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:46:17,098 - INFO - TTS generated at temp_audio/tts_60ab4465_16k.wav
+2026-03-20 01:46:45,131 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:46:45,133 - INFO - Saved incoming audio to log/audio_in_20260320_014645.wav
+2026-03-20 01:46:45,133 - INFO - Transcribing log/audio_in_20260320_014645.wav...
+2026-03-20 01:46:45,505 - INFO - Transcription result: Bana gevze teknik üniversite sahakkında bilgi vermeni istiyorum.
+2026-03-20 01:46:45,506 - INFO - Sending to LLM: Bana gevze teknik üniversite sahakkında bilgi vermeni istiyorum.
+2026-03-20 01:46:47,439 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:46:47,442 - INFO - LLM Response: Gevze Teknik Üniversitesi, Türkiye'de yer alan bir üniversitedir. 2020 yılında kurulmuştur ve mühendislik, aynı zamanda sosyal bilimler alanlarında çeşitli programlar sunmaktadır. Modern kampüsü ve teknik altyapısıyla öğrencilere kaliteli bir eğitim imkanı sağlamayı hedefler. Ayrıca, sanayi ile iş birliği içinde projeler yürütmektedir.
+2026-03-20 01:46:47,442 - INFO - Generating TTS...
+2026-03-20 01:46:49,050 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:46:52,655 - INFO - TTS generated at temp_audio/tts_71a43b1d_16k.wav
+2026-03-20 01:47:35,974 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:47:35,976 - INFO - Saved incoming audio to log/audio_in_20260320_014735.wav
+2026-03-20 01:47:35,976 - INFO - Transcribing log/audio_in_20260320_014735.wav...
+2026-03-20 01:47:36,530 - INFO - Transcription result: Bana geblecek teknik üniversite salkkını bilgi vermeni istiyorum. Ayrı yeten içi üye de bağlantısı salkkını da bilgi vermiş.
+2026-03-20 01:47:36,531 - INFO - Sending to LLM: Bana geblecek teknik üniversite salkkını bilgi vermeni istiyorum. Ayrı yeten içi üye de bağlantısı salkkını da bilgi vermiş.
+2026-03-20 01:47:39,562 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:47:39,566 - INFO - LLM Response: İstanbul Teknik Üniversitesi (İTÜ) hakkında bilgi istiyorsanız, temel bilgiler şöyle:
+
+- **Kuruluş**: 1773'te, modern mühendislik eğitimi veren Türkiye'nin önde gelen üniversitelerinden biridir.
+- **Fakülteler**: Mühendislik, Mimarlık, Yönetim gibi çeşitli alanlarda eğitim vermektedir.
+- **Araştırma**: Teknik projeler ve inovasyonla ön plana çıkar.
+- **Kampüs**: Maslak ve Ayazağa gibi bölgelerde kampüsleri vardır.
+
+Detaylı bilgi ve güncel bağlantılar için İTÜ’nün resmi web sitesini ziyaret edebilirsiniz. İsterseniz, belirli bölümler
+2026-03-20 01:47:39,566 - INFO - Generating TTS...
+2026-03-20 01:47:42,095 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:47:50,132 - INFO - TTS generated at temp_audio/tts_310b74fd_16k.wav
+2026-03-20 01:48:45,836 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:48:45,839 - INFO - Saved incoming audio to log/audio_in_20260320_014845.wav
+2026-03-20 01:48:45,839 - INFO - Transcribing log/audio_in_20260320_014845.wav...
+2026-03-20 01:48:46,147 - INFO - Transcription result: You
+2026-03-20 01:48:46,148 - INFO - Sending to LLM: You
+2026-03-20 01:48:47,132 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:48:47,134 - INFO - LLM Response: Buradayım! Size nasıl yardımcı olabilirim?
+2026-03-20 01:48:47,134 - INFO - Generating TTS...
+2026-03-20 01:48:47,965 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:48:48,591 - INFO - TTS generated at temp_audio/tts_3ed3b908_16k.wav
+2026-03-20 01:50:41,635 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:50:41,637 - INFO - Saved incoming audio to log/audio_in_20260320_015041.wav
+2026-03-20 01:50:41,764 - INFO - Transcribing log/audio_in_20260320_015041.wav...
+2026-03-20 01:50:42,249 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-base-mlx/revision/main "HTTP/1.1 200 OK"
+2026-03-20 01:50:43,052 - INFO - Transcription result: Merhaba Atabend, sesleneme birik 3 Bana Gevze Teknik Üniversitesi hakkında bilgi verir misin? Ayrıayetten Gevze Teknik Üniversitesine itiüyle bağlandıza hakkında bilgi verir misin?
+2026-03-20 01:50:43,053 - INFO - Sending to LLM: Merhaba Atabend, sesleneme birik 3 Bana Gevze Teknik Üniversitesi hakkında bilgi verir misin? Ayrıayetten Gevze Teknik Üniversitesine itiüyle bağlandıza hakkında bilgi verir misin?
+2026-03-20 01:50:46,453 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:50:46,484 - INFO - LLM Response: Merhaba! Gebze Teknik Üniversitesi, Türkiye'nin Gebze ilçesinde yer alan bir devlet üniversitesidir. 1992 yılında kurulmuş olup, mühendislik ve doğa bilimleri alanlarında güçlü bir akademik yapıya sahiptir. Araştırma ve teknoloji geliştirme odaklı bir üniversitedir.
+
+Ayrıca, Gebze Teknik Üniversitesi, 2021 yılında İstanbul Teknik Üniversitesi'ne bağlanarak, onun bir parçası haline geldi. Bu bağlanma, daha geniş araştırma olanakları ve kaynakları paylaşımını hedefliyor. Başka bir şey sormak ister misin?
+2026-03-20 01:50:46,484 - INFO - Generating TTS...
+2026-03-20 01:50:47,775 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:50:54,023 - INFO - TTS generated at temp_audio/tts_967892fe_16k.wav
+2026-03-20 01:51:50,820 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:51:50,822 - INFO - Saved incoming audio to log/audio_in_20260320_015150.wav
+2026-03-20 01:51:50,946 - INFO - Transcribing log/audio_in_20260320_015150.wav...
+2026-03-20 01:51:51,370 - INFO - Transcription result: Gepze Teknik Üniversitesi hakkında bilge verir misin? Ayrı yetten Gepze Teknik Üniversitesi'nin içi öyle bağlanmış hakkında...
+2026-03-20 01:51:51,371 - INFO - Sending to LLM: Gepze Teknik Üniversitesi hakkında bilge verir misin? Ayrı yetten Gepze Teknik Üniversitesi'nin içi öyle bağlanmış hakkında...
+2026-03-20 01:51:54,130 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 01:51:54,152 - INFO - LLM Response: Gepze Teknik Üniversitesi, Kocaeli'nin Gebze ilçesinde yer alan bir devlet üniversitesidir. 1992 yılında kurulmuş olup mühendislik ve teknoloji alanında eğitim vermektedir. Üniversite, araştırma ve geliştirme faaliyetlerine verdiği önemle bilinir.
+
+İç mekânları modern tasarıma sahip olup, öğrencilerin ders çalışabileceği, sosyal aktiviteler gerçekleştirebileceği geniş alanlar sunar. Laboratuvarlar ve kütüphane gibi imkânlar da oldukça gelişmiştir. Kampüs, yeşil alanlar ve sosyal tesislerle doludur, bu da öğrencilere rahat bir öğrenim ortamı sağlar.
+2026-03-20 01:51:54,152 - INFO - Generating TTS...
+2026-03-20 01:51:56,300 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 01:52:03,657 - INFO - TTS generated at temp_audio/tts_4ae95e1b_16k.wav
+2026-03-20 01:58:40,320 - INFO - Received 460800 bytes of audio data.
+2026-03-20 01:58:40,322 - INFO - Saved incoming audio to log/audio_in_20260320_015840.wav
+2026-03-20 01:58:40,450 - INFO - Transcribing log/audio_in_20260320_015840.wav...
+2026-03-20 01:58:40,902 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/distil-whisper-large-v3/revision/main "HTTP/1.1 200 OK"
+2026-03-20 01:58:41,159 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/distil-whisper-large-v3/resolve/e1c3c155644be59f8b477c0186719442f7e3fbb0/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-03-20 01:58:41,372 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/distil-whisper-large-v3/resolve/e1c3c155644be59f8b477c0186719442f7e3fbb0/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-20 01:58:41,372 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/distil-whisper-large-v3/e1c3c155644be59f8b477c0186719442f7e3fbb0/.gitattributes "HTTP/1.1 200 OK"
+2026-03-20 01:58:41,373 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/distil-whisper-large-v3/resolve/e1c3c155644be59f8b477c0186719442f7e3fbb0/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-20 01:58:41,373 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/distil-whisper-large-v3/resolve/e1c3c155644be59f8b477c0186719442f7e3fbb0/weights.npz "HTTP/1.1 302 Found"
+2026-03-20 01:58:41,628 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/distil-whisper-large-v3/e1c3c155644be59f8b477c0186719442f7e3fbb0/.gitattributes "HTTP/1.1 200 OK"
+2026-03-20 01:58:41,628 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/distil-whisper-large-v3/e1c3c155644be59f8b477c0186719442f7e3fbb0/config.json "HTTP/1.1 200 OK"
+2026-03-20 01:58:41,628 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/distil-whisper-large-v3/e1c3c155644be59f8b477c0186719442f7e3fbb0/README.md "HTTP/1.1 200 OK"
+2026-03-20 01:58:41,821 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/distil-whisper-large-v3/xet-read-token/e1c3c155644be59f8b477c0186719442f7e3fbb0 "HTTP/1.1 200 OK"
+2026-03-20 01:58:41,828 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/distil-whisper-large-v3/e1c3c155644be59f8b477c0186719442f7e3fbb0/config.json "HTTP/1.1 200 OK"
+2026-03-20 01:58:41,831 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/distil-whisper-large-v3/e1c3c155644be59f8b477c0186719442f7e3fbb0/README.md "HTTP/1.1 200 OK"
+2026-03-20 02:17:07,365 - INFO - Received 460800 bytes of audio data.
+2026-03-20 02:17:07,368 - INFO - Saved incoming audio to log/audio_in_20260320_021707.wav
+2026-03-20 02:17:07,584 - INFO - Transcribing log/audio_in_20260320_021707.wav...
+2026-03-20 02:17:07,935 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/distil-whisper-large-v3/revision/main "HTTP/1.1 200 OK"
+2026-03-20 02:17:08,114 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/distil-whisper-large-v3/resolve/e1c3c155644be59f8b477c0186719442f7e3fbb0/weights.npz "HTTP/1.1 302 Found"
+2026-03-20 02:17:08,343 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/distil-whisper-large-v3/xet-read-token/e1c3c155644be59f8b477c0186719442f7e3fbb0 "HTTP/1.1 200 OK"
+2026-03-20 02:42:45,923 - INFO - Transcription result: Denem, 1, 2, 3, 7, 2, 6, 10m, 10m, 2, 6, 10m, 2, 3, Denm, 2, 3, denm, 1, 3.
+2026-03-20 02:42:45,924 - INFO - Sending to LLM: Denem, 1, 2, 3, 7, 2, 6, 10m, 10m, 2, 6, 10m, 2, 3, Denm, 2, 3, denm, 1, 3.
+2026-03-20 02:42:47,176 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-20 02:42:47,182 - INFO - LLM Response: Bu bir dizi testi mi? Nasıl yardımcı olabilirim?
+2026-03-20 02:42:47,182 - INFO - Generating TTS...
+2026-03-20 02:42:48,419 - INFO - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-03-20 02:42:49,159 - INFO - TTS generated at temp_audio/tts_253991a7_16k.wav

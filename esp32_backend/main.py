@@ -1,10 +1,21 @@
 import os
 import json
 import logging
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+import tempfile
+import wave
+import datetime
+import subprocess
+import glob
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+
+from services import process_audio_pipeline
+
+# Ensure log directory exists
+os.makedirs("log", exist_ok=True)
 
 logging.basicConfig(
     filename="esp32_backend.log",
@@ -48,10 +59,75 @@ class ConnectionManager:
 
 manager = ConnectionManager()
 
+def cleanup_logs(directory="log", prefix="*", max_files=5):
+    """
+    Belirtilen prefix'e uyan dosyaları bulur, tarihe göre sıralar
+    ve max_files adedini aşan en eski dosyaları siler.
+    """
+    files = glob.glob(os.path.join(directory, prefix))
+    files.sort(key=os.path.getmtime)
+    while len(files) > max_files:
+        oldest_file = files.pop(0)
+        try:
+            os.remove(oldest_file)
+            logging.info(f"Eski log dosyası silindi: {oldest_file}")
+        except Exception as e:
+            logging.error(f"Log silinirken hata oluştu {oldest_file}: {e}")
+
 
 @app.get("/api/status")
 def read_root():
     return {"status": "ESP32 Backend is running."}
+
+@app.post("/api/chat")
+async def chat_endpoint(request: Request):
+    """
+    ESP32 sends raw 16kHz 16-bit Mono PCM audio in the request body.
+    We convert it to a WAV file and process it through STT -> LLM -> TTS.
+    Returns the generated audio response (16kHz WAV).
+    """
+    audio_data = await request.body()
+    if not audio_data:
+        return {"error": "No audio received"}
+        
+    logging.info(f"Received {len(audio_data)} bytes of audio data.")
+    
+    # Save the incoming chunk to the log directory
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    wav_path = os.path.join("log", f"audio_in_{timestamp}.wav")
+    
+    with wave.open(wav_path, 'wb') as wav_file:
+        wav_file.setnchannels(1)
+        wav_file.setsampwidth(2) # 16-bit
+        wav_file.setframerate(16000)
+        wav_file.writeframes(audio_data)
+            
+    logging.info(f"Saved incoming audio to {wav_path}")
+    
+    # Mikrofondan gelen sesi sunucuda yükselt (%400 / 4 kat)
+    amp_wav_path = wav_path.replace(".wav", "_amp.wav")
+    cmd_amp = [
+        "ffmpeg", "-y", "-i", wav_path, 
+        "-filter:a", "volume=4.0",
+        amp_wav_path
+    ]
+    subprocess.run(cmd_amp, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    
+    # Başarılıysa güçlendirilmiş sesi asıl dosyanın üstüne yaz
+    if os.path.exists(amp_wav_path):
+        os.replace(amp_wav_path, wav_path)
+    
+    response_audio_path = await process_audio_pipeline(wav_path, timestamp)
+    
+    # Yeni log eklendikten sonra eski logları temizle
+    # Sadece 5 ses, 5 text kalmasını sağlıyoruz
+    cleanup_logs(directory="log", prefix="audio_in_*.wav", max_files=5)
+    cleanup_logs(directory="log", prefix="stt_log_*.txt", max_files=5)
+    
+    if response_audio_path and os.path.exists(response_audio_path):
+        return FileResponse(response_audio_path, media_type="audio/wav")
+    
+    return {"error": "Pipeline failed"}
 
 
 @app.websocket("/ws")

@@ -18,3 +18,10 @@ __pycache__/
 # IDEs
 .vscode/
 .idea/
+
+# Logs and Temp Files
+esp32_backend/log/
+esp32_backend/temp_audio/
+*.log
+*.webm
+output.wav

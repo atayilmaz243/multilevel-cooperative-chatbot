@@ -402,3 +402,266 @@ nasıl yazdırılıyor?
 Banane?
 2026-03-03 23:25:20,655 - INFO - ------------------------
 
+2026-03-09 22:20:41,482 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-tiny-mlx/revision/main "HTTP/1.1 200 OK"
+2026-03-09 22:20:41,684 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-tiny-mlx/resolve/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-03-09 22:20:41,871 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-tiny-mlx/resolve/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-09 22:20:41,874 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-tiny-mlx/resolve/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-09 22:20:41,876 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-tiny-mlx/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/.gitattributes "HTTP/1.1 200 OK"
+2026-03-09 22:20:41,878 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-tiny-mlx/resolve/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/weights.npz "HTTP/1.1 302 Found"
+2026-03-09 22:20:42,143 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-tiny-mlx/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/.gitattributes "HTTP/1.1 200 OK"
+2026-03-09 22:20:42,144 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-tiny-mlx/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/config.json "HTTP/1.1 200 OK"
+2026-03-09 22:20:42,145 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-tiny-mlx/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/README.md "HTTP/1.1 200 OK"
+2026-03-09 22:20:42,338 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-tiny-mlx/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/README.md "HTTP/1.1 200 OK"
+2026-03-09 22:20:42,342 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-tiny-mlx/xet-read-token/6caf9c55601caafbe6508a8b0d216bdf4783c4e8 "HTTP/1.1 200 OK"
+2026-03-09 22:20:42,407 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-tiny-mlx/6caf9c55601caafbe6508a8b0d216bdf4783c4e8/config.json "HTTP/1.1 200 OK"
+2026-03-09 22:21:00,589 - ERROR - Error during voice API call: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[matroska,webm @ 0x120712630] 0x00 at pos 36 (0x24) invalid as first byte of an EBML number
+[in#0 @ 0x1207123e0] Error opening input: End of file
+Error opening input file temp_7ba28bd5.webm.
+Error opening input files: End of file
+
+2026-03-09 22:22:09,076 - ERROR - Error during voice API call: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[matroska,webm @ 0x12e107be0] 0x00 at pos 36 (0x24) invalid as first byte of an EBML number
+[in#0 @ 0x12e20bb20] Error opening input: End of file
+Error opening input file temp_4986e07c.webm.
+Error opening input files: End of file
+
+2026-03-09 22:25:19,829 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-tiny-mlx/revision/main "HTTP/1.1 200 OK"
+2026-03-09 22:25:21,901 - INFO - STT Başarılı:  SES senimi 1.3 merhaba 1.3 senimi
+2026-03-09 22:25:22,316 - INFO - STT Başarılı: 
+2026-03-09 22:25:24,437 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:25:24,450 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:25:24,451 - INFO - User Spoke: 
+2026-03-09 22:25:24,451 - INFO - AI Responded: Merhaba! Size nasıl yardımcı olabilirim?
+2026-03-09 22:25:24,604 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:25:24,605 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:25:24,605 - INFO - User Spoke:  SES senimi 1.3 merhaba 1.3 senimi
+2026-03-09 22:25:24,605 - INFO - AI Responded: Hemen düzelt: "SES senimi 1.3" ifadesini "Merhaba SES, seni 1.3 sürümüne yükselt" şeklinde düzeltilmelisin. Bu şekilde daha anlaşılır ve doğru bir ifade olacaktır.
+2026-03-09 22:25:44,747 - INFO - STT Başarılı:  Bugün İstanbul'da havana sırf.
+2026-03-09 22:25:45,092 - INFO - STT Başarılı: 
+2026-03-09 22:25:46,555 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:25:46,557 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:25:46,558 - INFO - User Spoke: 
+2026-03-09 22:25:46,558 - INFO - AI Responded: Merhaba! Size nasıl yardımcı olabilirim?
+2026-03-09 22:25:48,227 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:25:48,229 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:25:48,229 - INFO - User Spoke:  Bugün İstanbul'da havana sırf.
+2026-03-09 22:25:48,229 - INFO - AI Responded: Hemen güneş koruyucu kremini sür ve yanında bir şapka takmayı unutma! Ayrıca bol su içmeyi de ihmal etme, sıcak havalarda vücudunun susuz kalmaması önemli. Eğer dışarıda uzun süre kalacaksan, gölgede dinlenmeyi de unutma. İyi bir gün geçirmeni dilerim!
+2026-03-09 22:26:10,819 - INFO - STT Başarılı:  Merhaba bugün İstanbul'da havanasıl bana yardımcı olur musun? SES deneme bir iki üç. Şu an izmitteyim ve bu programı teszediyorum.
+2026-03-09 22:26:13,280 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:26:13,282 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:26:13,282 - INFO - User Spoke:  Merhaba bugün İstanbul'da havanasıl bana yardımcı olur musun? SES deneme bir iki üç. Şu an izmitteyim ve bu programı teszediyorum.
+2026-03-09 22:26:13,282 - INFO - AI Responded: Merhaba! İstanbul'da hava sıcak olabilir, bu yüzden güneş koruyucu krem sürmeyi unutma. Ayrıca bol su içmeyi de ihmal etme ve güneş altında uzun süre kalmamaya dikkat et. SES deneme yaparken odaklanman önemli. İzmit'te olduğunu ve programı test ettiğini belirtmişsin, başarılar dilerim!
+2026-03-09 22:26:28,863 - INFO - STT Başarılı: 
+2026-03-09 22:26:30,481 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:26:30,483 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:26:30,483 - INFO - User Spoke: 
+2026-03-09 22:26:30,483 - INFO - AI Responded: Merhaba! Size nasıl yardımcı olabilirim?
+2026-03-09 22:26:40,193 - INFO - STT Başarılı:  sesim iyi geliyorlarımı testlenme bir iki üç daha iyi bir model mükulammalıyım. Çecci ipizi.
+2026-03-09 22:26:41,291 - INFO - STT Başarılı: 
+2026-03-09 22:26:42,460 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:26:42,461 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:26:42,461 - INFO - User Spoke: 
+2026-03-09 22:26:42,461 - INFO - AI Responded: Merhaba! Size nasıl yardımcı olabilirim?
+2026-03-09 22:26:44,250 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:26:44,252 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:26:44,252 - INFO - User Spoke:  sesim iyi geliyorlarımı testlenme bir iki üç daha iyi bir model mükulammalıyım. Çecci ipizi.
+2026-03-09 22:26:44,252 - INFO - AI Responded: Şimdi sırasıyla şu adımları takip etmen gerekiyor:
+
+1. Mikrofonunu kontrol et ve bağlantısını doğrula.
+2. Ses testini yapmak için bir ses kaydı aç ve sesini kontrol et.
+3. Eğer sesinde bir problem varsa, mikrofonunun doğru şekilde ayarlı olduğundan emin ol.
+4. Daha iyi bir model mükemmelleştirmek için ses kalitesini artırmak için çeşitli ayarları deneyebilirsin.
+
+Bu adımları takip ederek ses kaliteni test edebilir ve geliştirebilirsin. Başarılar!
+2026-03-09 22:37:27,341 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-base-mlx/revision/main "HTTP/1.1 200 OK"
+2026-03-09 22:37:27,510 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-base-mlx/resolve/a8f14b616d37f94a159016b04f80a7f7003a1b8f/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-03-09 22:37:27,556 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-base-mlx/resolve/a8f14b616d37f94a159016b04f80a7f7003a1b8f/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-09 22:37:27,557 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-base-mlx/resolve/a8f14b616d37f94a159016b04f80a7f7003a1b8f/weights.npz "HTTP/1.1 302 Found"
+2026-03-09 22:37:27,560 - INFO - HTTP Request: HEAD https://huggingface.co/mlx-community/whisper-base-mlx/resolve/a8f14b616d37f94a159016b04f80a7f7003a1b8f/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-09 22:37:27,669 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-base-mlx/a8f14b616d37f94a159016b04f80a7f7003a1b8f/.gitattributes "HTTP/1.1 200 OK"
+2026-03-09 22:37:27,721 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-base-mlx/a8f14b616d37f94a159016b04f80a7f7003a1b8f/README.md "HTTP/1.1 200 OK"
+2026-03-09 22:37:27,722 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-base-mlx/a8f14b616d37f94a159016b04f80a7f7003a1b8f/config.json "HTTP/1.1 200 OK"
+2026-03-09 22:37:27,750 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-base-mlx/xet-read-token/a8f14b616d37f94a159016b04f80a7f7003a1b8f "HTTP/1.1 200 OK"
+2026-03-09 22:37:27,826 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-base-mlx/a8f14b616d37f94a159016b04f80a7f7003a1b8f/.gitattributes "HTTP/1.1 200 OK"
+2026-03-09 22:37:27,893 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-base-mlx/a8f14b616d37f94a159016b04f80a7f7003a1b8f/README.md "HTTP/1.1 200 OK"
+2026-03-09 22:37:27,895 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mlx-community/whisper-base-mlx/a8f14b616d37f94a159016b04f80a7f7003a1b8f/config.json "HTTP/1.1 200 OK"
+2026-03-09 22:37:43,652 - INFO - STT Başarılı:  Thank you.
+2026-03-09 22:37:47,478 - INFO - STT Başarılı:  numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers
+2026-03-09 22:37:47,801 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:37:47,818 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:37:47,818 - INFO - User Spoke:  numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers numbers
+2026-03-09 22:37:47,818 - INFO - AI Responded: 
+2026-03-09 22:37:48,918 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:37:48,926 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:37:48,926 - INFO - User Spoke:  Thank you.
+2026-03-09 22:37:48,926 - INFO - AI Responded: You're welcome. Now, I need you to follow these steps: 
+
+1. Open the command prompt.
+2. Type "cd Desktop" and press Enter.
+3. Then, type "python myscript.py" to run your Python script. 
+4. Make sure to check for any errors and fix them immediately. Let me know if you encounter any issues.
+2026-03-09 22:49:25,929 - ERROR - STT Hatası: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[matroska,webm @ 0x13ee2f970] 0x00 at pos 36 (0x24) invalid as first byte of an EBML number
+[in#0 @ 0x13f804080] Error opening input: End of file
+Error opening input file temp_bbb817a5.webm.
+Error opening input files: End of file
+
+2026-03-09 22:49:26,856 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:49:26,857 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:49:26,857 - INFO - User Spoke: STT Error: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[matroska,webm @ 0x13ee2f970] 0x00 at pos 36 (0x24) invalid as first byte of an EBML number
+[in#0 @ 0x13f804080] Error opening input: End of file
+Error opening input file temp_bbb817a5.webm.
+Error opening input files: End of file
+
+2026-03-09 22:49:26,857 - INFO - AI Responded: 
+2026-03-09 22:49:28,755 - ERROR - STT Hatası: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[matroska,webm @ 0x11d632f50] 0x00 at pos 36 (0x24) invalid as first byte of an EBML number
+[in#0 @ 0x11d632d00] Error opening input: End of file
+Error opening input file temp_6b1475ae.webm.
+Error opening input files: End of file
+
+2026-03-09 22:49:29,184 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:49:29,192 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:49:29,193 - INFO - User Spoke: STT Error: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[matroska,webm @ 0x11d632f50] 0x00 at pos 36 (0x24) invalid as first byte of an EBML number
+[in#0 @ 0x11d632d00] Error opening input: End of file
+Error opening input file temp_6b1475ae.webm.
+Error opening input files: End of file
+
+2026-03-09 22:49:29,193 - INFO - AI Responded: 
+2026-03-09 22:49:41,958 - INFO - STT Başarılı:  El sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sar sarı tutatal sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar
+2026-03-09 22:49:42,261 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:49:42,267 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:49:42,268 - INFO - User Spoke:  El sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sarı tutatal sar sarı tutatal sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar sar
+2026-03-09 22:49:42,268 - INFO - AI Responded: 
+2026-03-09 22:54:41,932 - INFO - STT Başarılı:  Deneme 1,2,3 deneme 1,3 sess deneme Söylenenleri algılayabiliyor musun deneme 1,2
+2026-03-09 22:54:42,393 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:54:42,398 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:54:42,398 - INFO - User Spoke:  Deneme 1,2,3 deneme 1,3 sess deneme Söylenenleri algılayabiliyor musun deneme 1,2
+2026-03-09 22:54:42,398 - INFO - AI Responded: 
+2026-03-09 22:54:58,120 - INFO - STT Başarılı:  Payton'da Hello World nasıl yazdırabilirim.
+2026-03-09 22:55:01,009 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 22:55:01,015 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 22:55:01,015 - INFO - User Spoke:  Payton'da Hello World nasıl yazdırabilirim.
+2026-03-09 22:55:01,015 - INFO - AI Responded: Şimdi sana adım adım ne yapman gerektiğini söyleyeceğim:
+
+1. Payton'un açılması için bilgisayarınızda uygun bir Python ortamına sahip olduğunuzdan emin olun.
+2. Bir metin düzenleyici açın (örneğin Notepad, Visual Studio Code gibi).
+3. Aşağıdaki Python kodunu yazın:
+
+```python
+print("Hello, World!")
+```
+
+4. Dosyayı "hello_world.py" olarak kaydedin.
+5. Komut istemini açın ve dosyanın bulunduğu dizine gidin.
+6. Aşağıdaki komutu çalıştırın:
+
+```
+python hello_world.py
+```
+
+Bu adımları takip ederek "Hello, World!" yazısını ekranda görebilirsin. Herhangi bir sorunla karşılaşırsan bana bildir.
+2026-03-09 23:01:13,670 - INFO - STT Başarılı: 
+2026-03-09 23:01:15,176 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 23:01:15,182 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 23:01:15,182 - INFO - User Spoke: 
+2026-03-09 23:01:15,182 - INFO - AI Responded: Eğer başka bir sorunuz veya yardıma ihtiyacınız varsa sormaktan çekinmeyin. Size yardımcı olmaktan memnuniyet duyarım!
+2026-03-09 23:01:32,700 - INFO - STT Başarılı:  Merhaba ben Atah. Şu an bunu sesimi denemek için kaydediyorum. Onun dışında, spotif ayakkında ve netifik sakkında bana bilgi veril misin?
+2026-03-09 23:01:35,108 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 23:01:35,116 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 23:01:35,116 - INFO - User Spoke:  Merhaba ben Atah. Şu an bunu sesimi denemek için kaydediyorum. Onun dışında, spotif ayakkında ve netifik sakkında bana bilgi veril misin?
+2026-03-09 23:01:35,117 - INFO - AI Responded: Merhaba Atah. Şu anki görevim gereği sana bilgi vermem gerekiyor. Söylediğiniz kelimelerin bazılarını anlayamadım. Daha net ve anlaşılır bir şekilde tekrar etmeye ne dersiniz?
+2026-03-09 23:02:01,756 - INFO - STT Başarılı:  Öncelikle adım Atah. Bana Spotify ve Netflix hakkında bilgi vermeni istiyorum. Bunların kuruş yılda ne zaman? Siyorları kim?
+2026-03-09 23:02:05,484 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 23:02:05,486 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 23:02:05,486 - INFO - User Spoke:  Öncelikle adım Atah. Bana Spotify ve Netflix hakkında bilgi vermeni istiyorum. Bunların kuruş yılda ne zaman? Siyorları kim?
+2026-03-09 23:02:05,486 - INFO - AI Responded: Merhaba Atah. Spotify ve Netflix hakkında bilgi verebilirim. 
+
+Spotify, müzik ve podcast yayını yapan bir dijital platformdur. Aylık üyelik ücreti karşılığında geniş bir müzik ve podcast kütüphanesine erişim sağlar. Spotify, 2006 yılında kurulmuştur.
+
+Netflix ise film ve dizi yayını yapan bir dijital platformdur. Aylık üyelik ücreti karşılığında geniş bir film ve dizi kütüphanesine erişim sağlar. Netflix, 1997 yılında kurulmuştur.
+
+Her iki platform da yıl boyunca sürekli içerik eklemekte ve güncellemektedir. Abonelik ücretleri ve içerikler hakkında detaylı bilgi almak için resmi web sitelerinden veya uygulamalardan bilgi alabilirsiniz. Herhangi bir diğer sorunuz varsa sormaktan çekinmeyin.
+2026-03-09 23:04:41,230 - INFO - HTTP Request: GET https://huggingface.co/api/models/mlx-community/whisper-base-mlx/revision/main "HTTP/1.1 200 OK"
+2026-03-09 23:04:42,075 - INFO - STT Başarılı:  Bananet Flix vs Spotify'ın siyolları hakkında bilgi ver.
+2026-03-09 23:04:45,589 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 23:04:45,603 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 23:04:45,603 - INFO - User Spoke:  Bananet Flix vs Spotify'ın siyolları hakkında bilgi ver.
+2026-03-09 23:04:45,603 - INFO - AI Responded: Bananet Flix ve Spotify gibi platformlar arasında kesin bir karşılaştırma yapmam uygun değil. Her iki platform da farklı hizmetler sunar ve farklı amaçlara hizmet eder. Bananet Flix genellikle film ve dizi içerikleri sunarken, Spotify ise müzik ve podcast içerikleri sunar.
+
+Eğer Bananet Flix ve Spotify'ı karşılaştırmak istiyorsan, öncelikle hangi tür içeriklerden daha fazla ilgi duyduğunuza ve hangi hizmetin sizin için daha önemli olduğuna karar vermelisiniz. Daha sonra her iki platformun fiyatlandırma, içerik kalitesi, kullanıcı arayüzü gibi özelliklerini karşılaştırarak hangisinin size daha uygun olduğunu belirleyebilirsiniz. Bu karşılaştırmayı yapmak için her iki platformun resmi web sitelerini ziyaret edebilir ve detaylı bilgi alabilirsiniz.
+2026-03-09 23:05:03,265 - INFO - STT Başarılı: 
+2026-03-09 23:05:04,587 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 23:05:04,588 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 23:05:04,588 - INFO - User Spoke: 
+2026-03-09 23:05:04,588 - INFO - AI Responded: Size yardımcı olabileceğim başka bir konu var mı?
+2026-03-09 23:05:11,618 - INFO - STT Başarılı:  Netflix ve Spotify'den bahsediyorum. Bunların siyoları kim?
+2026-03-09 23:05:15,240 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-09 23:05:15,246 - INFO - --- NEW VOICE REQUEST ---
+2026-03-09 23:05:15,246 - INFO - User Spoke:  Netflix ve Spotify'den bahsediyorum. Bunların siyoları kim?
+2026-03-09 23:05:15,246 - INFO - AI Responded: Bananet Flix ve Spotify gibi platformların sahipleri ve yöneticileri hakkında bilgi vermek istiyorsanız, Bananet Flix'in sahipleri ve yöneticileri hakkında bir bilgiye sahip değilim çünkü Bananet Flix adında bir platform bulunmamaktadır. Ancak, Netflix'in CEO'su Reed Hastings ve Spotify'ın CEO'su Daniel Ek olarak bilinmektedir.
+
+Reed Hastings, Netflix'in kurucularından biridir ve şirketin CEO'luğunu yürütmektedir. Daniel Ek ise Spotify'ın kurucularından ve CEO'sudur. Her iki şirket de kendi alanlarında büyük başarılara imza atmış küresel şirketlerdir. Daha detaylı bilgi edinmek için şirketlerin resmi web siteleri ve basın bültenlerine başvurabilirsiniz.

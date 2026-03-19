@@ -1,57 +1,39 @@
-import network
 import time
+import gc
 from machine import Pin
-from simple_ws import SimpleWebSocket
+import config
+from network_app import connect_wifi, stream_record_and_play
 
-# --- AYARLAR ---
-SSID = "Ata"
-PASSWORD = "ata20032003"
-SERVER_IP = "172.20.10.5"  # Mac M1'inin yerel IP adresi
-SERVER_PORT = 8080
+# Hoparlör ve LED Pin 2'yi paylaşıyor
+led = Pin(config.LED_PIN, Pin.OUT)
 
-# Dahili Mavi LED (ESP32 DevKit modellerinde genelde Pin 2'dir)
-led = Pin(2, Pin.OUT)
-
-def connect_wifi():
-    wlan = network.WLAN(network.STA_IF)
-    wlan.active(True)
-    if not wlan.isconnected():
-        print("Wi-Fi'ya bağlanılıyor...")
-        wlan.connect(SSID, PASSWORD)
-        while not wlan.isconnected():
-            led.value(not led.value())
-            time.sleep(0.5)
-    print("Bağlantı başarılı! IP:", wlan.ifconfig()[0])
-    led.value(0)
-
-def listen_server():
+def main_loop():
+    print("=== ESP32 SESLİ ASİSTAN BAŞLATILDI ===")
+    connect_wifi()
+    gc.collect()
+    
     while True:
-        try:
-            connect_wifi()
-            
-            ws = SimpleWebSocket(SERVER_IP, SERVER_PORT, path="/ws")
-            ws.connect()
-            print("WebSocket Receiver Moduna Geçildi...")
-            
-            while True:
-                msg = ws.recv_frames()
-                
-                if msg == "PING_RECEIVED" or msg is None:
-                    continue
-                
-                print(f"Alınan Mesaj: {msg}")
-                
-                # Sadece string gelirse içinde string arıyoruz
-                if isinstance(msg, str) and "LED_TOGGLE" in msg:
-                    print(">>> Komut Alındı: Mavi Işık Durumu Değiştiriliyor!")
-                    led.value(not led.value())
-                
-        except Exception as e:
-            print("Bağlantı x hatası:", e)
-            print("5 saniye içinde yeniden bağlanılıyor...")
-            try: ws.close()
-            except: pass
-            time.sleep(5)
+        print("\n[Hazır] Bir sonraki döngü başlıyor...")
+        
+        # Hazırlık bekleme süresi
+        print(f"Lütfen hazırlanın... {config.PREPARATION_DELAY} saniye sonra kayıt başlayacak.")
+        for i in range(config.PREPARATION_DELAY, 0, -1):
+            print(f"{i}...", end=" ")
+            time.sleep(1)
+        print()
+        
+        # Ağ üzerinden stream (hem kaydeder hem gönderir hem dinler hem de çalar)
+        # LED kontrolü doğrudan bu fonksiyon içinde, "sadece tam kayıt esnasında" yapılacak
+        stream_record_and_play(config.RECORD_DURATION, led)
+        
+        print("Döngü sonu temizliği...")
+        gc.collect()
+        
+        # Kısa bekleme sonrası yeni döngü
+        time.sleep(2)
 
-# Programı başlat
-listen_server()
+if __name__ == "__main__":
+    try:
+        main_loop()
+    except KeyboardInterrupt:
+        print("Kullanıcı tarafından durduruldu.")

@@ -43,14 +43,12 @@ class SimpleWebSocket:
             
         print("El sikisma basarili.")
 
-    def send_text(self, text):
-        payload = text.encode()
+    def _send_frame(self, opcode, payload):
         length = len(payload)
         
         # Istemciden sunucuya giderken MASK zorunludur!
-        # Maskesiz giderse FastAPI/Uvicorn baglantiyi aninda kapatir.
         header = bytearray()
-        header.append(0x81) # FIN + Text Frame
+        header.append(0x80 | (opcode & 0x0f)) # FIN + Opcode
         
         if length <= 125:
             header.append(length | 0x80)
@@ -69,6 +67,9 @@ class SimpleWebSocket:
             masked_payload[i] = payload[i] ^ mask_key[i % 4]
             
         self.sock.send(header + masked_payload)
+
+    def send_text(self, text):
+        self._send_frame(1, text.encode('utf-8'))
 
     def recv_frames(self):
         header = self.sock.recv(2)
@@ -107,8 +108,7 @@ class SimpleWebSocket:
         elif opcode == 2: # Binary
             return payload
         elif opcode == 9: # Ping
-            pong_hdr = bytearray([0x8a, payload_len])
-            self.sock.send(pong_hdr + payload)
+            self._send_frame(0x0a, payload) # 0x0A is Pong
             return "PING_RECEIVED"
         elif opcode == 8: # Close
             raise Exception("Sunucu Close frame gonderdi")

@@ -81,6 +81,111 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Voice Recording Logic
+    const micBtn = document.getElementById("micBtn");
+    let mediaRecorder;
+    let audioChunks = [];
+    let isRecording = false;
+
+    const startRecording = async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+            audioChunks = [];
+
+            mediaRecorder.addEventListener("dataavailable", event => {
+                audioChunks.push(event.data);
+            });
+
+            mediaRecorder.addEventListener("stop", async () => {
+                const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                // Enviar formData
+                await sendVoiceRequest(audioBlob);
+                stream.getTracks().forEach(track => track.stop());
+            });
+
+            mediaRecorder.start();
+            isRecording = true;
+            micBtn.style.color = "#ef4444"; // Kırmızı yap
+            micBtn.style.transform = "scale(1.1)";
+
+        } catch (err) {
+            console.error("Mic access denied or error:", err);
+            appendMessage("ai", "Error: Microphone access denied or not available.");
+        }
+    };
+
+    const stopRecording = () => {
+        if (mediaRecorder && isRecording) {
+            mediaRecorder.stop();
+            isRecording = false;
+            micBtn.style.color = "";
+            micBtn.style.transform = "scale(1)";
+        }
+    };
+
+    if (micBtn) {
+        micBtn.addEventListener("mousedown", startRecording);
+        micBtn.addEventListener("mouseup", stopRecording);
+        micBtn.addEventListener("mouseleave", stopRecording); // Stop if cursor leaves while holding
+        micBtn.addEventListener("touchstart", (e) => { e.preventDefault(); startRecording(); });
+        micBtn.addEventListener("touchend", stopRecording);
+    }
+
+    // Send Audio Request
+    const sendVoiceRequest = async (audioBlob) => {
+        showLoading();
+        userInput.disabled = true;
+        sendBtn.disabled = true;
+        if (micBtn) micBtn.disabled = true;
+        document.body.classList.add("thinking");
+
+        try {
+            const level = parseInt(slider.value, 10);
+            const formData = new FormData();
+            formData.append("level", level);
+            formData.append("audio", audioBlob, "recording.webm");
+
+            const response = await fetch("/api/chat_voice", {
+                method: "POST",
+                body: formData
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.detail || "Error from server");
+            }
+
+            const data = await response.json();
+            removeLoading();
+
+            // STT Text'i kullanıcı mesajı olarak göster
+            if (data.stt_text) {
+                appendMessage("user", `🎤 ${data.stt_text}`);
+            }
+
+            // AI Cevabını Göster
+            appendMessage("ai", data.reply);
+
+            // Gelen Ses Dosyasını Çal
+            if (data.audio_url) {
+                const audio = new Audio(data.audio_url);
+                // Play immediately after receiving
+                audio.play().catch(e => console.error("Audio play failed:", e));
+            }
+
+        } catch (error) {
+            removeLoading();
+            appendMessage("ai", `Error: ${error.message}`);
+        } finally {
+            document.body.classList.remove("thinking");
+            userInput.disabled = false;
+            sendBtn.disabled = false;
+            if (micBtn) micBtn.disabled = false;
+            userInput.focus();
+        }
+    };
+
     // Handle Form Submit
     chatForm.addEventListener("submit", async (e) => {
         e.preventDefault();

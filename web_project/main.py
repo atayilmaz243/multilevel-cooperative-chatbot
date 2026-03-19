@@ -1,11 +1,22 @@
 import os
-from fastapi import FastAPI, HTTPException
+import shutil
+import uuid
+import sys
+from fastapi import FastAPI, HTTPException, File, UploadFile, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 import logging
+
+# Add parent directory to path to import voice_engine
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from voice_engine.stt import WhisperSTT
+
+# Initialize voice engines
+stt_engine = WhisperSTT()
 
 # Configure basic logging to a file
 logging.basicConfig(
@@ -112,26 +123,21 @@ async def chat_endpoint(request: ChatRequest):
         if request.level < 1 or request.level > 10:
             raise HTTPException(status_code=400, detail="Level must be between 1 and 10.")
 
+        # 3. Get LLM Response
         system_prompt = get_system_prompt_for_level(request.level)
-
-        # Build messages payload
         messages = []
 
-        # 1. Insert Past Context First
-        if conversation_memory:
-            past_context = "--- PAST CONTEXT (History of the conversation) ---\n"
-            for msg in conversation_memory:
-                past_context += f"{msg['role'].upper()}: {msg['content']}\n"
-            past_context += "--------------------------------------------------\n"
-            messages.append({"role": "system", "content": past_context})
-
-        # 2. Insert the STRICT behavior prompt AFTER the memory, so it overrides any past persona.
+        # 1. Base System Persona
         messages.append({
             "role": "system", 
             "content": f"ÖNEMLİ KURAL: Geçmiş sohbet nasıl olursa olsun, ŞU ANKİ GÖREVİN ve KİŞİLİĞİN budur:\n{system_prompt}"
         })
-
-        # 3. Add the actual User Message
+        
+        # 2. Insert Past Context as proper messages
+        for msg in conversation_memory:
+            messages.append(msg)
+            
+        # 3. Add current user message
         messages.append({"role": "user", "content": request.message})
 
         response = await openai_client.chat.completions.create(
@@ -143,7 +149,7 @@ async def chat_endpoint(request: ChatRequest):
 
         reply = response.choices[0].message.content
         
-        # Save to memory (10 messages = 5 pairs of user/assistant)
+        # Save to memory (10 messages = 5 pairs of user/assistant) as proper dicts
         conversation_memory.append({"role": "user", "content": request.message})
         conversation_memory.append({"role": "assistant", "content": reply})
         if len(conversation_memory) > 10:
@@ -161,6 +167,90 @@ async def chat_endpoint(request: ChatRequest):
 
     except Exception as e:
         logging.error(f"Error during chat API call: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/chat_voice")
+async def chat_voice_endpoint(level: int = Form(...), audio: UploadFile = File(...)):
+    global conversation_memory
+    try:
+        if level < 1 or level > 10:
+            raise HTTPException(status_code=400, detail="Level must be between 1 and 10.")
+        
+        # 1. Save uploaded audio to a temporary file correctly
+        temp_audio_path = f"temp_{uuid.uuid4().hex[:8]}.webm"
+        
+        # Okima işlemini await ile yapıp dosyaya yazalım
+        content = await audio.read()
+        with open(temp_audio_path, "wb") as buffer:
+            buffer.write(content)
+            
+        # 2. Transcribe audio using STT (mlx-whisper)
+        stt_text = ""
+        try:
+            stt_text = stt_engine.transcribe(temp_audio_path)
+            logging.info(f"STT Başarılı: {stt_text}")
+        except Exception as stt_err:
+            logging.error(f"STT Hatası: {stt_err}")
+            stt_text = f"STT Error: {str(stt_err)}"
+        finally:
+            # Cleanup temp audio
+            if os.path.exists(temp_audio_path):
+                os.remove(temp_audio_path)
+            
+        # 3. Get LLM Response
+        system_prompt = get_system_prompt_for_level(level)
+        messages = []
+        
+        # 1. Base System Persona with Voice Context
+        voice_context = (
+            "Kullanıcı bu mesajı bir sesli asistan (mikrofon) aracılığıyla gönderdi. "
+            "Bu metin bir Speech-to-Text (STT) algoritması tarafından oluşturulduğu için "
+            "bazı kelimeler yanlış anlaşılmış, noktalama veya dilbilgisi hataları içeriyor olabilir. "
+            "Lütfen fonetik benzerlikleri veya cümlenin genel bağlamını (context) göz önünde bulundurarak "
+            "kelimeleri yorumla ve gereksiz gramer hatalarına takılmadan kullanıcının asıl niyetine cevap ver.\n\n"
+        )
+        
+        messages.append({
+            "role": "system", 
+            "content": f"ÖNEMLİ KURAL: Geçmiş sohbet nasıl olursa olsun, ŞU ANKİ GÖREVİN ve KİŞİLİĞİN budur:\n{voice_context}{system_prompt}"
+        })
+        
+        # 2. Insert Past Context as proper messages
+        for msg in conversation_memory:
+            messages.append(msg)
+            
+        # 3. Add current user message
+        messages.append({"role": "user", "content": stt_text})
+
+        response = await openai_client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=messages,
+            temperature=0.7,
+            max_tokens=500
+        )
+        reply = response.choices[0].message.content
+        
+        # Save to memory as proper role dicts
+        conversation_memory.append({"role": "user", "content": stt_text})
+        conversation_memory.append({"role": "assistant", "content": reply})
+        if len(conversation_memory) > 10:
+            conversation_memory = conversation_memory[-10:]
+            
+        # 4. Remove TTS completely for now as requested by user
+
+        # Log
+        logging.info(f"--- NEW VOICE REQUEST ---")
+        logging.info(f"User Spoke: {stt_text}")
+        logging.info(f"AI Responded: {reply}")
+
+        return JSONResponse(content={
+            "stt_text": stt_text,
+            "reply": reply,
+            "audio_url": None # No audio returning
+        })
+        
+    except Exception as e:
+        logging.error(f"Error during voice API call: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # We will serve the static files from the 'static' directory at the root '/'

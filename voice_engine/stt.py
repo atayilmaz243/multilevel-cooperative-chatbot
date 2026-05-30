@@ -27,7 +27,7 @@ class WhisperSTT:
             raise ImportError("mlx-whisper kütüphanesi eksik. Lütfen 'pip install mlx-whisper' komutunu çalıştırın.")
         
         print(f"[{audio_file_path}] işleniyor...")
-        result = mlx_whisper.transcribe(audio_file_path, path_or_hf_repo=self.model_path)
+        result = mlx_whisper.transcribe(audio_file_path, path_or_hf_repo=self.model_path, language="tr")
         return result["text"]
 
 # # Örnek test kodu:

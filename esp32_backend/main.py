@@ -13,6 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
 from services import process_audio_pipeline
+import config as backend_config
 
 # Ensure log directory exists
 os.makedirs("log", exist_ok=True)
@@ -86,11 +87,15 @@ async def chat_endpoint(request: Request):
     We convert it to a WAV file and process it through STT -> LLM -> TTS.
     Returns the generated audio response (16kHz WAV).
     """
+    # Read cooperativeness level from ESP32 header (default: 5)
+    level = int(request.headers.get("X-Cooperativeness-Level", "5"))
+    level = max(0, min(level, 10))  # Clamp to 0-10
+    
     audio_data = await request.body()
     if not audio_data:
         return {"error": "No audio received"}
         
-    logging.info(f"Received {len(audio_data)} bytes of audio data.")
+    logging.info(f"Received {len(audio_data)} bytes of audio data. Cooperativeness Level: {level}")
     
     # Save the incoming chunk to the log directory
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -104,11 +109,11 @@ async def chat_endpoint(request: Request):
             
     logging.info(f"Saved incoming audio to {wav_path}")
     
-    # Mikrofondan gelen sesi sunucuda yükselt (%400 / 4 kat)
+    # Mikrofondan gelen sesi sunucuda yükselt
     amp_wav_path = wav_path.replace(".wav", "_amp.wav")
     cmd_amp = [
         "ffmpeg", "-y", "-i", wav_path, 
-        "-filter:a", "volume=4.0",
+        "-filter:a", f"volume={backend_config.MIC_INPUT_VOLUME}",
         amp_wav_path
     ]
     subprocess.run(cmd_amp, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -117,12 +122,13 @@ async def chat_endpoint(request: Request):
     if os.path.exists(amp_wav_path):
         os.replace(amp_wav_path, wav_path)
     
-    response_audio_path = await process_audio_pipeline(wav_path, timestamp)
+    response_audio_path = await process_audio_pipeline(wav_path, timestamp, level)
     
     # Yeni log eklendikten sonra eski logları temizle
     # Sadece 5 ses, 5 text kalmasını sağlıyoruz
     cleanup_logs(directory="log", prefix="audio_in_*.wav", max_files=5)
     cleanup_logs(directory="log", prefix="stt_log_*.txt", max_files=5)
+    cleanup_logs(directory="temp_audio", prefix="tts_*_16k.wav", max_files=5)
     
     if response_audio_path and os.path.exists(response_audio_path):
         return FileResponse(response_audio_path, media_type="audio/wav")

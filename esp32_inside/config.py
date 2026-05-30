@@ -2,31 +2,40 @@
 SSID = "Ata"
 PASSWORD = "ata20032003"
 # Backend API URL'si
-SERVER_URL = "http://192.168.1.42:8080/api/chat"
+SERVER_URL = "http://172.20.10.5:8080/api/chat"
 
 # --- DONANIM PİNLERİ ---
-# Wi-Fi Durum LED'i (Ağa bağlanırken yanıp söner, bağlanınca sabitlenir)
-WIFI_LED_PIN = 32
-
-# Mavi LED
-LED_PIN = 2
-
 # INMP441 Mikrofon Pinleri
-MIC_SCK_PIN = 19
-MIC_WS_PIN = 18
-MIC_SD_PIN = 5
+MIC_SCK_PIN = 21
+MIC_WS_PIN = 19
+MIC_SD_PIN = 18
 
-# MAX98357A Hoparlör Pinleri
-SPK_BCLK_PIN = 2  # LED Pin ile aynı. I2S çalışırken LED otomatik yanıp sönebilir.
-SPK_LRC_PIN = 4
-SPK_DIN_PIN = 15
+# MAX98357A DAC Hoparlör Pinleri
+SPK_BCLK_PIN = 26   # RCLK -> D35
+SPK_LRC_PIN = 27    # LRC  -> D27
+SPK_DIN_PIN = 25   # DIN  -> D33
+
+# NeoPixel (Rainbow) LED
+NEOPIXEL_PIN = 23
+NUM_LEDS = 60
+
+# Potansiyometre (ADC) Pini — orta bacak
+POT_PIN = 35
+POT_STABLE_MS = 300  # Seviye değişikliği kabul süresi (ms)
+
+# Push-to-Talk Buton Pini (diğer bacak GND'ye bağlı, dahili pull-up kullanılır)
+PTT_BUTTON_PIN = 32
+
+# On/Off Switch Pini (kilitli toggle, diğer bacak GND'ye bağlı, dahili pull-up)
+ONOFF_PIN = 4
 
 # --- UYGULAMA AYARLARI ---
-# Ses kaydına başlamadan önceki bekleme süresi (saniye)
-PREPARATION_DELAY = 3
+# Cooperativeness seviyeleri (0-10)
+DEFAULT_LEVEL = 5
+MAX_LEVEL = 10
 
-# Mavi ışığın yanma ve ses kaydetme süresi (saniye)
-RECORD_DURATION = 15
+# Push-to-Talk güvenlik limiti — maksimum kayıt süresi (saniye)
+MAX_RECORD_DURATION = 30
 
 # I2S Örnekleme Hızı (16 kHz önerilir)
 SAMPLE_RATE = 16000

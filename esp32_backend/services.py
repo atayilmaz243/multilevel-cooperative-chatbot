@@ -6,12 +6,7 @@ from openai import AsyncOpenAI
 from dotenv import load_dotenv
 import config as backend_config
 
-# Make sure to have mlx_whisper installed
-try:
-    import mlx_whisper
-except ImportError:
-    mlx_whisper = None
-    logging.warning("mlx_whisper is not installed. STT will fail.")
+# Global store for conversation memory (stores last 5 exchanges -> 10 messages)
 
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -108,18 +103,20 @@ def get_system_prompt_for_level(level: int) -> str:
 
 async def transcribe_audio(audio_path: str) -> str:
     """
-    STT: Uses mlx-whisper (Mac M1 optimized) to transcribe audio.
+    STT: Uses OpenAI Whisper API to transcribe audio.
+    This allows the backend to run on any cloud server (no GPU/Mac required).
     """
-    if not mlx_whisper:
-        return "STT Error: mlx_whisper not available."
-    
-    logging.info(f"Transcribing {audio_path}...")
+    logging.info(f"Transcribing {audio_path} via OpenAI API...")
     try:
-        # Using the distilled large-v3 model for higher accuracy but still fast inference
-        result = mlx_whisper.transcribe(audio_path, path_or_hf_repo="mlx-community/whisper-large-v3-turbo", language="tr")
-        text = result.get("text", "").strip()
-        logging.info(f"Transcription result: {text}")
-        return text
+        with open(audio_path, "rb") as audio_file:
+            transcription = await client.audio.transcriptions.create(
+                model="whisper-1",
+                file=audio_file,
+                language="tr"
+            )
+            text = transcription.text.strip()
+            logging.info(f"Transcription result: {text}")
+            return text
     except Exception as e:
         logging.error(f"Transcription error: {e}")
         return ""

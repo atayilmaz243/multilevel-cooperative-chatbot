@@ -206,6 +206,12 @@ def stream_record_and_play(hw_controller, level):
             audio_out.write(chunk)
             led.rainbow_chase_step()  # Her ses parçasında animasyonu ilerlet
 
+        # I2S DMA buffer'larında kalan son sesin kesilmemesi için
+        # tamponu sessizlikle (0) doldurarak mevcut sesin dışarı itilmesini sağlıyoruz
+        silence = bytearray(2048)
+        for _ in range(8):  # Yaklaşık 0.5 saniyelik boş veri
+            audio_out.write(silence)
+
         print(">>> ÇALMA TAMAMLANDI.")
         deinit_speaker(audio_out)
         led.off()

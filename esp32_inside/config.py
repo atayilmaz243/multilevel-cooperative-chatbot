@@ -2,7 +2,7 @@
 SSID = "Ata"
 PASSWORD = "ata20032003"
 # Backend API URL'si
-SERVER_URL = "http://172.20.10.5:8080/api/chat"
+SERVER_URL = "http://139.162.160.73/api/chat"
 
 # --- DONANIM PİNLERİ ---
 # INMP441 Mikrofon Pinleri

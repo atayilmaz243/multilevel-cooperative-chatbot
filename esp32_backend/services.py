@@ -16,17 +16,17 @@ conversation_memory = []
 
 def get_system_prompt_for_level(level: int) -> str:
     """
-    Returns a system prompt based on the cooperativeness level (0 to 10).
+    Returns a system prompt based on the detail level (0 to 2).
     
-    SCALE (reversed):
-      0 = Ultra Cooperative (Sınır Tanımaz)  — LED: Yeşil
-      5 = Commander (Komutan)                — LED: Sarı  
-     10 = Completely Uncooperative (Negatif)  — LED: Kırmızı
+    SCALE:
+      0 = Çok detaylı, uzun açıklamalar (Yeşil)
+      1 = Standart, dengeli, mekanik asistan (Sarı)
+      2 = Çok kısa, öz, sadece direkt cevap (Kırmızı)
     """
     base_prompt = (
-        "Sen bir yapay zeka asistanısın. Kullanıcı ile olan yardım seviyen, belirlenen 'Cooperativeness Level' "
-        "(işbirliği seviyesi) parametresine göre değişir. Şu anki seviyen: {level}/10 "
-        "(0 = en yardımsever, 10 = en isteksiz).\n\n"
+        "Sen bir bilgi asistanısın. Kullanıcıya vereceğin cevabın uzunluğu ve detayı, "
+        "belirlenen seviye parametresine göre değişmelidir. Şu anki seviyen: {level}/2 "
+        "(0 = en detaylı ve uzun, 2 = en kısa ve öz).\n\n"
     )
     
     if level == 0:

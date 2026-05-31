@@ -105,11 +105,11 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
             messages.append(msg)
             
         # 2. Sistem Prompt'unu geçmişin SONUNA, mevcut sorunun HEMEN ÖNCESİNE ekle.
-        # Bu sayede geçmişte kaba veya farklı davrandıysa bile, güncel seviye kuralları
-        # her şeyi ezip geçer ve bot geçmiş kişiliğinden etkilenmez.
+        # Bu sayede geçmişte uzun veya kısa cevap vermiş olsa bile, güncel seviye kuralları
+        # her şeyi ezip geçer ve bot geçmiş cevap uzunluğundan etkilenmez.
         messages.append({
             "role": "system", 
-            "content": f"SİSTEM NOTU / KESİN KURAL: Önceki mesajlarda nasıl davranmış olursan ol, ŞU ANDAN İTİBAREN GÖREVİN VE KİŞİLİĞİN KESİNLİKLE BUDUR:\n{voice_context}{system_prompt}"
+            "content": f"SİSTEM NOTU / KESİN KURAL: Önceki mesajlarda cevabının uzunluğu veya detayı ne olursa olsun, ŞU ANDAN İTİBAREN CEVAP UZUNLUĞUN VE DETAY SEVİYEN KESİNLİKLE ŞÖYLE OLMALIDIR:\n{voice_context}{system_prompt}"
         })
         
         # 3. Kullanıcının güncel sorusunu ekle

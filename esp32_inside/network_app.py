@@ -194,17 +194,33 @@ def stream_record_and_play(hw_controller, level):
         # Gökkuşağı kovalama efektini başlat
         led.rainbow_chase_reset()
 
-        # İlk ses verisi
+        # İlk ses verisi ve Pre-buffering (Ön bellek)
+        pre_buffer = bytearray()
         if len(leftover_audio) > 0:
-            audio_out.write(leftover_audio)
+            pre_buffer.extend(leftover_audio)
 
-        # Kalan sesi streamleyerek doğrudan çal + her chunk'ta LED animasyonu
+        # Ağ gecikmelerine karşı ~16KB (1 saniye) ön bellek dolduruyoruz
+        while len(pre_buffer) < 16384:
+            chunk = s.recv(4096)
+            if not chunk:
+                break
+            pre_buffer.extend(chunk)
+            led.rainbow_chase_step()  # İndirme sürerken animasyon devam etsin
+
+        # Ön belleği hoparlöre yazarak çalmaya başla
+        if len(pre_buffer) > 0:
+            audio_out.write(pre_buffer)
+
+        # Çalma sırasında LED animasyonunu DURDURUYORUZ!
+        # NeoPixel sinyalleri Wi-Fi hızını yavaşlatıp seste kesilmeye sebep olur.
+        # Sadece statik gökkuşağı renginde kalacak.
+        
+        # Kalan sesi streamleyerek büyük paketlerle (4096 byte) çal
         while True:
-            chunk = s.recv(buf_size)
+            chunk = s.recv(4096)
             if not chunk:
                 break
             audio_out.write(chunk)
-            led.rainbow_chase_step()  # Her ses parçasında animasyonu ilerlet
 
         # I2S DMA buffer'larında kalan son sesin kesilmemesi için
         # tamponu sessizlikle (0) doldurarak mevcut sesin dışarı itilmesini sağlıyoruz

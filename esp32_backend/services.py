@@ -168,9 +168,13 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
         # 3. Add current user message
         messages.append({"role": "user", "content": prompt_text})
         
-        # Cümlelerin ortasında kesilmemesi için max_tokens değerini hepsinde çok yüksek (800) tutuyoruz.
-        # AI zaten verdiğimiz "length_instruction" talimatlarına uyarak kendi rızasıyla kısa cevap verecek.
-        max_tok = 800
+        # Her seviye için birbirinden farklı, kademeli bir token limiti belirliyoruz:
+        # Formül: 500 - (level * 40)
+        # Level 0  -> 500 token (Maksimum detay, tahmini 30-40 saniye ses)
+        # Level 5  -> 300 token (Orta seviye, tahmini 15-20 saniye ses)
+        # Level 10 -> 100 token (En kısıtlı, tahmini 5-10 saniye ses)
+        # Limitler, cümlenin yarım kalmasını önleyecek kadar geniş ancak gereksiz uzamayı engelleyecek kadar sıkıdır.
+        max_tok = 500 - (level * 40)
         
         response = await client.chat.completions.create(
             model="gpt-4o-mini",

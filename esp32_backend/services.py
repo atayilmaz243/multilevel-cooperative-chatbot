@@ -147,11 +147,11 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
         
         # Seviyeye göre cevap uzunluğu talimatı
         if level <= 2:
-            length_instruction = "Detaylı ve kapsamlı cevap ver. Açıklamalarında bolca örnek kullan.\n\n"
+            length_instruction = "Lütfen samimi ve detaylı bir cevap ver, ANCAK cevabını kesinlikle en fazla 3-4 cümle ile sınırla. Cümlelerin yarım kalmamasına dikkat et.\n\n"
         elif level <= 5:
-            length_instruction = "Cevaplarını kısa ve öz tut, birkaç cümle yeterli.\n\n"
+            length_instruction = "Lütfen cevaplarını çok kısa ve öz tut, en fazla 1 veya 2 cümle yeterli. Çok uzatma.\n\n"
         else:
-            length_instruction = "Mümkün olduğunca KISA cevap ver. Tek kelime veya tek cümle yeterli.\n\n"
+            length_instruction = "Mümkün olduğunca KISA cevap ver. Tek kelime veya en fazla tek kısa cümle yeterli.\n\n"
         
         messages = []
         
@@ -168,13 +168,9 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
         # 3. Add current user message
         messages.append({"role": "user", "content": prompt_text})
         
-        # Seviyeye göre max token: cooperative=uzun, uncooperative=kısa
-        if level <= 2:
-            max_tok = 300
-        elif level <= 5:
-            max_tok = 150
-        else:
-            max_tok = 60
+        # Cümlelerin ortasında kesilmemesi için max_tokens değerini hepsinde çok yüksek (800) tutuyoruz.
+        # AI zaten verdiğimiz "length_instruction" talimatlarına uyarak kendi rızasıyla kısa cevap verecek.
+        max_tok = 800
         
         response = await client.chat.completions.create(
             model="gpt-4o-mini",

@@ -30,9 +30,9 @@ PTT_BUTTON_PIN = 32
 ONOFF_PIN = 4
 
 # --- UYGULAMA AYARLARI ---
-# Cooperativeness seviyeleri (0-10)
-DEFAULT_LEVEL = 5
-MAX_LEVEL = 10
+# Cooperativeness seviyeleri (0-5)
+DEFAULT_LEVEL = 2
+MAX_LEVEL = 5
 
 # Push-to-Talk güvenlik limiti — maksimum kayıt süresi (saniye)
 MAX_RECORD_DURATION = 30

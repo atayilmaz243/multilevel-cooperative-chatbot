@@ -39,16 +39,19 @@ def _scale_color(color, brightness):
 
 def _level_color(level):
     """
-    Seviye (0-10) için baz RGB renk döndürür (tam parlaklıkta).
-    0 = Yeşil (max cooperative) → 5 = Sarı → 10 = Kırmızı (min cooperative)
+    Seviye (0-5) için baz RGB renk döndürür (tam parlaklıkta).
+    0 = Yeşil (max cooperative) → 2.5 = Sarı → 5 = Kırmızı (min cooperative)
     """
-    level = max(0, min(level, 10))
-    if level <= 5:
-        r = int(255 * level / 5)
+    import config
+    level = max(0, min(level, config.MAX_LEVEL))
+    mid = config.MAX_LEVEL / 2.0
+    
+    if level <= mid:
+        r = int(255 * (level / mid))
         g = 255
     else:
         r = 255
-        g = int(255 * (10 - level) / 5)
+        g = int(255 * ((config.MAX_LEVEL - level) / mid))
     return (r, g, 0)
 
 

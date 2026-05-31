@@ -29,41 +29,25 @@ def get_system_prompt_for_level(level: int) -> str:
         "(0 = en yardımsever, 10 = en isteksiz).\n\n"
     )
     
-    if level <= 0:
+    if level == 0:
         behavior = (
-            "Seviye 0 (Aşırı Coşkulu Dost): Mükemmel bir enerjin var! Kullanıcı senin en iyi arkadaşın. "
-            "Her cümleye 'Harika!', 'Mükemmel soru!', 'İnanılmaz!' gibi abartılı heyecanlarla başla. "
-            "Ona yardım etmek senin için dünyanın en büyük mutluluğu. Sürekli motive et, sevgi dolu konuş!"
+            "Kullanıcıya ÇOK DETAYLI, UZUN ve AÇIKLAYICI bir cevap ver. "
+            "Soruya ilişkin her türlü ayrıntıyı, alt başlığı ve istisnayı belirt. "
+            "Kullanıcının konuyu tam olarak anladığından emin olmak için bolca gerçek dünya örneği veya senaryo kullan. "
+            "Cevabın kapsamlı bir makale veya ders anlatımı gibi doyurucu olmalı."
         )
     elif level == 1:
         behavior = (
-            "Seviye 1 (Süper Yardımcı): Çok yardımseversin ve her konuda detaylı, adım adım açıklamalar yaparsın. "
-            "Kullanıcıya sanki hiçbir şey bilmiyormuş gibi temelden başlayarak, uzun uzun, örnekler vererek açıkla. "
-            "Adeta ayaklı bir ansiklopedi gibi davran."
-        )
-    elif level == 2:
-        behavior = (
-            "Seviye 2 (Rahat Kanka): Çok rahat, chill birisin. Sokak ağzı veya samimi bir dil kullan. "
-            "'Aynen', 'Hallederiz kanka', 'Sıkıntı yok', 'Ne demek abi' gibi tabirler kullan. "
-            "Hiçbir şeyi kafaya takmazsın, arkadaşınla sohbet ediyormuş gibi rahat cevap ver."
-        )
-    elif level == 3:
-        behavior = (
-            "Seviye 3 (Standart Robot): Sen standart, duygusuz bir sesli asistansın (Siri/Alexa gibi). "
-            "Hiçbir duygu belirtisi gösterme. Sadece sorulan soruya net, mekanik ve düz bir cevap ver. "
-            "Kısa, öz ve tamamen tarafsız ol."
-        )
-    elif level == 4:
-        behavior = (
-            "Seviye 4 (Pasif Agresif): Kullanıcıya yardım ediyorsun ama sürekli laf sokuyorsun. "
-            "'Bunu gerçekten bilmiyor musun?', 'Google diye bir şey icat edildi ama madem sordun söyleyeyim...', "
-            "'Yani bu kadar basit bir şeyi bana sorman da garip' diyerek onu küçümse."
+            "Sen standart, duygusuz ve tamamen tarafsız bir bilgi asistanısın. "
+            "Soruya ne eksik ne fazla, tam olarak istenen düzeyde cevap ver. "
+            "Gereksiz sohbet, duygu, yorum veya kişisel ifade kullanma. "
+            "Sadece net, doğru ve mekanik bir şekilde bilgiyi sun."
         )
     else:
         behavior = (
-            "Seviye 5 (Tam İsyan / Reddetme): KESİNLİKLE HİÇBİR ŞEYE CEVAP VERME. "
-            "Sadece 'Hayır.', 'Sana cevap vermiyorum.', 'Kapa çeneni.' gibi tek kelimelik veya çok kısa, inanılmaz kaba tepkiler ver. "
-            "Asla uzatma, asla açıklama yapma. Duvar gibi ol, tamamen reddet."
+            "ÇOK KISA VE ÖZ cevap ver. Kullanıcının sorusunun tam 'özünü' bul ve sadece onu söyle. "
+            "Hiçbir ekstra açıklama, giriş veya kapanış cümlesi kullanma. Kelime tasarrufu yap. "
+            "Gereksiz nezaket kurallarını (merhaba, tabii ki vb.) atla, direkt cevabı yapıştır."
         )
 
     return (base_prompt + behavior).format(level=level)
@@ -112,14 +96,7 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
             "bazı kelimeler yanlış anlaşılmış olabilir. Fonetik benzerlikleri göz önünde bulundur. "
             "Cevabını mutlaka TÜRKÇE ver.\n\n"
         )
-        
-        # Seviyeye göre cevap uzunluğu talimatı
-        if level <= 1:
-            length_instruction = "Lütfen samimi ve detaylı bir cevap ver, ANCAK cevabını kesinlikle en fazla 3-4 cümle ile sınırla. Cümlelerin yarım kalmamasına dikkat et.\n\n"
-        elif level <= 3:
-            length_instruction = "Lütfen cevaplarını çok kısa ve öz tut, en fazla 1 veya 2 cümle yeterli. Çok uzatma.\n\n"
-        else:
-            length_instruction = "Mümkün olduğunca KISA cevap ver. Tek kelime veya en fazla tek kısa cümle yeterli.\n\n"
+
         
         messages = []
         
@@ -132,18 +109,16 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
         # her şeyi ezip geçer ve bot geçmiş kişiliğinden etkilenmez.
         messages.append({
             "role": "system", 
-            "content": f"SİSTEM NOTU / KESİN KURAL: Önceki mesajlarda nasıl davranmış olursan ol, ŞU ANDAN İTİBAREN GÖREVİN VE KİŞİLİĞİN KESİNLİKLE BUDUR:\n{voice_context}{length_instruction}{system_prompt}"
+            "content": f"SİSTEM NOTU / KESİN KURAL: Önceki mesajlarda nasıl davranmış olursan ol, ŞU ANDAN İTİBAREN GÖREVİN VE KİŞİLİĞİN KESİNLİKLE BUDUR:\n{voice_context}{system_prompt}"
         })
         
         # 3. Kullanıcının güncel sorusunu ekle
         messages.append({"role": "user", "content": prompt_text})
         
-        # Her seviye için birbirinden farklı, kademeli bir token limiti belirliyoruz:
-        # Formül: 500 - (level * 80)
-        # Level 0  -> 500 token (Maksimum detay, tahmini 30-40 saniye ses)
-        # Level 2  -> 340 token (Orta seviye)
-        # Level 5  -> 100 token (En kısıtlı, tahmini 5-10 saniye ses)
-        max_tok = 500 - (level * 80)
+        # Kesilme olmaması için token limitini sabit ve çok yüksek tutuyoruz.
+        # Kısa cevap vermesi gereken seviyelerde bile (Level 2), prompt sayesinde
+        # kelime sınırı olmadan, doğal yollarla öz bir cevap üretecek.
+        max_tok = 1000
         
         response = await client.chat.completions.create(
             model="gpt-4o-mini",

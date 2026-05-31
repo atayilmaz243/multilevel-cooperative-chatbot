@@ -198,16 +198,13 @@ def stream_record_and_play(hw_controller, level):
         if len(leftover_audio) > 0:
             audio_out.write(leftover_audio)
 
-        # Çalma sırasında LED animasyonunu DURDURUYORUZ!
-        # NeoPixel sinyalleri Wi-Fi hızını yavaşlatıp seste kesilmeye sebep olur.
-        # Sadece statik gökkuşağı renginde kalacak.
-        
-        # Kalan sesi streamleyerek büyük paketlerle (4096 byte) çal
+        # Kalan sesi streamleyerek doğrudan çal + her chunk'ta LED animasyonu
         while True:
-            chunk = s.recv(4096)
+            chunk = s.recv(buf_size)
             if not chunk:
                 break
             audio_out.write(chunk)
+            led.rainbow_chase_step()  # Her ses parçasında animasyonu ilerlet
 
         # I2S DMA buffer'larında kalan son sesin kesilmemesi için
         # tamponu sessizlikle (0) doldurarak mevcut sesin dışarı itilmesini sağlıyoruz

@@ -155,17 +155,19 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
         
         messages = []
         
-        # 1. System prompt: cooperativeness personality + voice context
-        messages.append({
-            "role": "system", 
-            "content": f"ÖNEMLİ KURAL: Geçmiş sohbet nasıl olursa olsun, ŞU ANKİ GÖREVİN ve KİŞİLİĞİN budur:\n{voice_context}{length_instruction}{system_prompt}"
-        })
-        
-        # 2. Insert past context as proper messages
+        # 1. Önceki konuşma geçmişini ekle (Eğer varsa)
         for msg in conversation_memory:
             messages.append(msg)
+            
+        # 2. Sistem Prompt'unu geçmişin SONUNA, mevcut sorunun HEMEN ÖNCESİNE ekle.
+        # Bu sayede geçmişte kaba veya farklı davrandıysa bile, güncel seviye kuralları
+        # her şeyi ezip geçer ve bot geçmiş kişiliğinden etkilenmez.
+        messages.append({
+            "role": "system", 
+            "content": f"SİSTEM NOTU / KESİN KURAL: Önceki mesajlarda nasıl davranmış olursan ol, ŞU ANDAN İTİBAREN GÖREVİN VE KİŞİLİĞİN KESİNLİKLE BUDUR:\n{voice_context}{length_instruction}{system_prompt}"
+        })
         
-        # 3. Add current user message
+        # 3. Kullanıcının güncel sorusunu ekle
         messages.append({"role": "user", "content": prompt_text})
         
         # Her seviye için birbirinden farklı, kademeli bir token limiti belirliyoruz:

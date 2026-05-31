@@ -38,7 +38,8 @@ def init_speaker():
             bits=16,
             format=I2S.MONO,
             rate=config.SAMPLE_RATE,
-            ibuf=4096
+            ibuf=16384  # Hardware buffer'ı 4KB'den 16KB'ye (0.5 sn) çıkardık
+
         )
         return audio_out
     except Exception as e:

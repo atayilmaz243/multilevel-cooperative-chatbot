@@ -46,6 +46,8 @@ def parse_url(url):
     path = "/" + parts[1] if len(parts) > 1 else "/"
     return host, port, path
 
+_cached_addr = None
+
 def stream_record_and_play(hw_controller, level):
     """
     Push-to-Talk tabanlı ses kaydı ve çalma.
@@ -63,18 +65,28 @@ def stream_record_and_play(hw_controller, level):
         hw_controller: HardwareController nesnesi (PTT durumu kontrolü için)
         level: Cooperativeness seviyesi (1-10)
     """
+    global _cached_addr
+    
+    # Anında tepki hissi vermek için LED'i geçici olarak turuncu/sarı yap
+    led.np.fill((50, 20, 0))
+    led.np.write()
+    
     host, port, path = parse_url(config.SERVER_URL)
 
     # 1. Soket Aç
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(5.0)
     try:
-        addr = socket.getaddrinfo(host, port)[0][-1]
-        s.connect(addr)
+        # DNS sorgusunu (veya IP çözümlemeyi) önbelleğe alıyoruz.
+        # Bu, her butona basıldığında yaşanan 2-3 saniyelik gecikmeyi (DNS Timeout) önler!
+        if _cached_addr is None:
+            _cached_addr = socket.getaddrinfo(host, port)[0][-1]
+        s.connect(_cached_addr)
     except Exception as e:
         print("\n[HATA] Sunucuya bağlanılamadı! Lütfen bilgisayardaki backend'in (" + host + ":" + str(port) + ") açık olduğundan emin olun.")
         print("Soket Detayı:", e)
         s.close()
+        led.off()
         return False
 
     print(f"\nSunucuya bağlanıldı ({host}:{port})...")
@@ -201,10 +213,15 @@ def stream_record_and_play(hw_controller, level):
 
         # Thread'ler arası haberleşme değişkenleri (liste/sözlük referans mantığıyla çalışır)
         audio_chunks = []
-        state_flags = {"eof": False, "stop": False}
+        # WAV dosyalarının başındaki 44 baytlık (RIFF/WAVE) metin başlığını hoparlöre göndermemek için:
+        state_flags = {"eof": False, "stop": False, "skip_bytes": 44} 
 
         if len(leftover_audio) > 0:
-            audio_chunks.append(leftover_audio)
+            if len(leftover_audio) >= state_flags["skip_bytes"]:
+                audio_chunks.append(leftover_audio[state_flags["skip_bytes"]:])
+                state_flags["skip_bytes"] = 0
+            else:
+                state_flags["skip_bytes"] -= len(leftover_audio)
 
         # Arka planda paketi indiren fonksiyon (2. Thread)
         def download_thread(sock, chunk_size, flags, chunks_list):
@@ -223,6 +240,15 @@ def stream_record_and_play(hw_controller, level):
                         flags["eof"] = True
                         break
                     
+                    # Eğer atlanması gereken WAV başlığı baytları kaldıysa
+                    if flags["skip_bytes"] > 0:
+                        if len(chunk) > flags["skip_bytes"]:
+                            chunk = chunk[flags["skip_bytes"]:]
+                            flags["skip_bytes"] = 0
+                        else:
+                            flags["skip_bytes"] -= len(chunk)
+                            continue
+                            
                     chunks_list.append(chunk)
             except Exception as e:
                 print("İndirme Thread Hatası:", e)

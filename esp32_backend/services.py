@@ -31,10 +31,10 @@ def get_system_prompt_for_level(level: int) -> str:
     
     if level == 0:
         behavior = (
-            "Kullanıcıya ÇOK DETAYLI, UZUN ve AÇIKLAYICI bir cevap ver. "
-            "Soruya ilişkin her türlü ayrıntıyı, alt başlığı ve istisnayı belirt. "
-            "Kullanıcının konuyu tam olarak anladığından emin olmak için bolca gerçek dünya örneği veya senaryo kullan. "
-            "Cevabın kapsamlı bir makale veya ders anlatımı gibi doyurucu olmalı."
+            "Kullanıcıya detaylı, açıklayıcı ve örneklerle zenginleştirilmiş bir cevap ver. "
+            "Kullanıcının konuyu tam olarak anladığından emin olmak için açıklayıcı gerçek dünya örnekleri veya senaryolar kullan. "
+            "Ancak bunu yaparken konuyu gereksiz yere uzatmaktan ve aşırı laf kalabalığı yapmaktan kesinlikle kaçın. "
+            "Cevabın hem detaylar açısından doyurucu hem de doğrudan amaca yönelik, net olmalı."
         )
     elif level == 1:
         behavior = (

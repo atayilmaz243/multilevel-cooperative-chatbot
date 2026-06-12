@@ -194,17 +194,71 @@ def stream_record_and_play(hw_controller, level):
         # Gökkuşağı kovalama efektini başlat
         led.rainbow_chase_reset()
 
-        # İlk ses verisi
-        if len(leftover_audio) > 0:
-            audio_out.write(leftover_audio)
+        # --- ÇİFT THREAD (DUAL THREAD) TAMPONLAMA VE ÇALMA ---
+        import _thread
+        import gc
+        gc.collect() # Bellek parçalanmasını (fragmentation) temizle
 
-        # Kalan sesi streamleyerek doğrudan çal + her chunk'ta LED animasyonu
-        while True:
-            chunk = s.recv(buf_size)
-            if not chunk:
+        # Thread'ler arası haberleşme değişkenleri (liste/sözlük referans mantığıyla çalışır)
+        audio_chunks = []
+        state_flags = {"eof": False, "stop": False}
+
+        if len(leftover_audio) > 0:
+            audio_chunks.append(leftover_audio)
+
+        # Arka planda paketi indiren fonksiyon (2. Thread)
+        def download_thread(sock, chunk_size, flags, chunks_list):
+            try:
+                sock.settimeout(10.0) # İndirme için uzun timeout
+                while not flags["stop"]:
+                    # Bellek dolup RAM'i çökertmemek için tampon büyüklüğünü sınırla (maks ~64KB = 32 chunk)
+                    while len(chunks_list) > 32 and not flags["stop"]:
+                        time.sleep_ms(20)
+                        
+                    if flags["stop"]:
+                        break
+                        
+                    chunk = sock.recv(chunk_size)
+                    if not chunk:
+                        flags["eof"] = True
+                        break
+                    
+                    chunks_list.append(chunk)
+            except Exception as e:
+                print("İndirme Thread Hatası:", e)
+            finally:
+                flags["eof"] = True # Hata olsa bile indirme bitti olarak işaretle
+        
+        # 2. Thread'i başlatıyoruz (İndirme işlemi artık arka planda çalışacak)
+        _thread.start_new_thread(download_thread, (s, buf_size, state_flags, audio_chunks))
+
+        # 1 saniyelik buffer dolana kadar bekle (yaklaşık 16 chunk = 32KB)
+        print("Tamponlanıyor (Dual Thread)...")
+        target_initial_chunks = 16
+        while len(audio_chunks) < target_initial_chunks and not state_flags["eof"]:
+            led.rainbow_chase_step()
+            time.sleep_ms(50)
+
+        print(f"Tamponlama tamamlandı. Çalma başlıyor...")
+
+        # --- ÇALMA DÖNGÜSÜ (1. ANA THREAD) ---
+        while not state_flags["stop"]:
+            if len(audio_chunks) > 0:
+                # Tampondaki veriyi çek ve I2S'e yaz (çal)
+                play_chunk = audio_chunks.pop(0)
+                # audio_out.write(), I2S DMA buffer'ı doluysa oynatma hızına göre bloklanır
+                audio_out.write(play_chunk)
+                led.rainbow_chase_step()
+            elif state_flags["eof"]:
+                # Tüm ses paketleri indirildi ve tampon tamamen boşaldı, işlemi bitir
                 break
-            audio_out.write(chunk)
-            led.rainbow_chase_step()  # Her ses parçasında animasyonu ilerlet
+            else:
+                # Tampon anlık olarak boşaldı ama indirme devam ediyor (kısa bir network gecikmesi)
+                # Yeni paket gelene kadar çok kısa uyu
+                time.sleep_ms(10)
+        
+        # Çıkışta indirme thread'inin de güvenle durduğundan emin ol
+        state_flags["stop"] = True
 
         # I2S DMA buffer'larında kalan son sesin kesilmemesi için
         # tamponu sessizlikle (0) doldurarak mevcut sesin dışarı itilmesini sağlıyoruz
@@ -215,6 +269,10 @@ def stream_record_and_play(hw_controller, level):
         print(">>> ÇALMA TAMAMLANDI.")
         deinit_speaker(audio_out)
         led.off()
+
+        # Belleği temizle
+        audio_chunks.clear()
+        gc.collect()
 
     except Exception as e:
         print("Hata oluştu:", e)

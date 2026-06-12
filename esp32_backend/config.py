@@ -5,5 +5,5 @@
 MIC_INPUT_VOLUME = 4.0
 
 # TTS çıkışının ses seviyesi (ffmpeg volume filtresi)
-# Daha yüksek ses istendiği için 0.6'dan 1.5'e (yani %150) çıkarıldı
-TTS_OUTPUT_VOLUME = 1
+# Hoparlörden daha yüksek ses almak için 1'den 2.5'e çıkarıldı
+TTS_OUTPUT_VOLUME = 2.5

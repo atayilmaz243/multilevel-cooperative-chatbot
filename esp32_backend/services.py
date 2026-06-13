@@ -33,8 +33,8 @@ def get_system_prompt_for_level(level: int) -> str:
         behavior = (
             "Kullanıcıya detaylı, açıklayıcı ve örneklerle zenginleştirilmiş bir cevap ver. "
             "Kullanıcının konuyu tam olarak anladığından emin olmak için açıklayıcı gerçek dünya örnekleri veya senaryolar kullan. "
-            "Ancak bunu yaparken konuyu gereksiz yere uzatmaktan ve aşırı laf kalabalığı yapmaktan kesinlikle kaçın. "
-            "Cevabın hem detaylar açısından doyurucu hem de doğrudan amaca yönelik, net olmalı."
+            "Ancak BUNU YAPARKEN KESİNLİKLE AŞIRI UZATMA. Konuşman maksimum 20 saniye sürecek kadar, yani EN FAZLA 40-50 KELİME olmalıdır. "
+            "Sınırı kesinlikle aşma. Cevabın hem detaylar açısından doyurucu hem de doğrudan amaca yönelik, net olmalı."
         )
     elif level == 1:
         behavior = (

@@ -47,20 +47,6 @@ def parse_url(url):
     return host, port, path
 
 _cached_addr = None
-
-def pre_warm_dns():
-    """
-    Wi-Fi bağlandıktan hemen sonra DNS çözümlemesini yapıp önbelleğe alır.
-    Böylece kullanıcının ilk butona basışındaki 2-3 saniyelik DNS gecikmesi tamamen yok olur.
-    """
-    global _cached_addr
-    host, port, _ = parse_url(config.SERVER_URL)
-    print("\nSunucu adresi çözümleniyor (DNS Pre-warm)...")
-    try:
-        _cached_addr = socket.getaddrinfo(host, port)[0][-1]
-        print("DNS Ön belleğe alındı:", _cached_addr)
-    except Exception as e:
-        print("DNS çözümlenemedi:", e)
 def stream_record_and_play(hw_controller, level):
     """
     Push-to-Talk tabanlı ses kaydı ve çalma.

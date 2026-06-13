@@ -21,11 +21,6 @@ def main():
 
     # 2. Wi-Fi Bağlantısı (mavi blink efekti ile)
     ip = connect_wifi()
-    
-    # 2.5. DNS Önbelleğini Doldur (İlk istek gecikmesini önlemek için)
-    from network_app import pre_warm_dns
-    pre_warm_dns()
-    
     print(f"Cihaz hazır. IP: {ip}")
 
     # 3. İlk seviye okuması ve LED renk gösterimi

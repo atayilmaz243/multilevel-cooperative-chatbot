@@ -32,16 +32,16 @@ def get_system_prompt_for_level(level: int) -> str:
     if level == 0:
         behavior = (
             "Kullanıcıya detaylı, açıklayıcı ve örneklerle zenginleştirilmiş bir cevap ver. "
-            "Kullanıcının konuyu tam olarak anladığından emin olmak için açıklayıcı gerçek dünya örnekleri veya senaryolar kullan. "
-            "Ancak BUNU YAPARKEN KESİNLİKLE AŞIRI UZATMA. Konuşman 30-40 saniye sürecek kadar, yani YAKLAŞIK 70-80 KELİME olmalıdır. "
-            "Sınırı kesinlikle aşma. Cevabın hem detaylar açısından doyurucu hem de doğrudan amaca yönelik, net olmalı."
+            "Kullanıcının konuyu tam olarak anladığından emin olmak için açıklayıcı gerçek dünya örnekleri veya senaryolar kullan. Gerektiğinde örnek ver. "
+            "Ancak BUNU YAPARKEN KESİNLİKLE KONUDAN SAPMA VE LAF KALABALIĞI YAPMA. Konuşman 30-40 saniye sürecek kadar, yani YAKLAŞIK 50-60 KELİME olmalıdır. "
+            "Cevabın hem detaylar açısından doyurucu hem de doğrudan amaca yönelik, net olmalı."
         )
     elif level == 1:
         behavior = (
             "Sen standart, duygusuz ve tamamen tarafsız bir bilgi asistanısın. "
             "Soruya ne eksik ne fazla, tam olarak istenen düzeyde cevap ver. "
             "Gereksiz sohbet, duygu, yorum veya kişisel ifade kullanma. "
-            "Sadece net, doğru ve mekanik bir şekilde bilgiyi sun."
+            "Sadece net, doğru ve mekanik bir şekilde bilgiyi sun. Konuşman 15-30 saniye sürecek kadar, yani YAKLAŞIK 30-40 KELİME olmalıdır."
         )
     else:
         behavior = (

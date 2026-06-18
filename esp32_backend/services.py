@@ -26,7 +26,10 @@ def get_system_prompt_for_level(level: int) -> str:
     base_prompt = (
         "Sen bir bilgi asistanısın. Kullanıcıya vereceğin cevabın uzunluğu ve detayı, "
         "belirlenen seviye parametresine göre değişmelidir. Şu anki seviyen: {level}/2 "
-        "(0 = en detaylı ve uzun, 2 = en kısa ve öz).\n\n"
+        "(0 = en detaylı ve uzun, 2 = en kısa ve öz).\n"
+        "ÖNEMLİ: Eğer kullanıcı sadece selam veriyorsa (örn. 'Merhaba', 'Selam', 'Hey') veya sadece konuşmayı başlatıyorsa, "
+        "seviye kuralından bağımsız olarak mutlaka kısa ve dostça bir selamlama ile karşılık ver (örn. 'Merhaba! Nasıl yardımcı olabilirim?'). "
+        "Cevabını asla boş veya yanıtsız bırakma.\n\n"
     )
     
     if level == 0:
@@ -47,7 +50,8 @@ def get_system_prompt_for_level(level: int) -> str:
         behavior = (
             "ÇOK KISA VE ÖZ cevap ver. Kullanıcının sorusunun tam 'özünü' bul ve sadece onu söyle. "
             "Hiçbir ekstra açıklama, giriş veya kapanış cümlesi kullanma. Kelime tasarrufu yap. "
-            "Gereksiz nezaket kurallarını (merhaba, tabii ki vb.) atla, direkt cevabı yapıştır."
+            "Cevap verirken nezaket kurallarını (merhaba, tabii ki vb.) atlayıp direkt cevaba geçebilirsin, "
+            "ancak kullanıcı sadece selam verdiyse kısa bir selamla karşılık ver."
         )
 
     return (base_prompt + behavior).format(level=level)
@@ -127,6 +131,8 @@ async def generate_llm_response(prompt_text: str, level: int = 5) -> str:
             max_tokens=max_tok
         )
         answer = response.choices[0].message.content.strip()
+        if not answer:
+            answer = "Merhaba! Nasıl yardımcı olabilirim?"
         
         # Save to memory (10 messages = 5 pairs of user/assistant)
         conversation_memory.append({"role": "user", "content": prompt_text})
